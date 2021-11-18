@@ -1,7 +1,6 @@
 package com.quotes.Controller;
 
 import com.quotes.exception.QuoteException;
-import com.quotes.model.ErrorCodes;
 import com.quotes.model.QuotesElement;
 import com.quotes.service.QuotesService;
 import io.swagger.annotations.ApiOperation;

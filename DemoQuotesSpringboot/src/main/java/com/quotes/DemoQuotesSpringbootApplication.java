@@ -1,5 +1,6 @@
 package com.quotes;
 
+import com.google.common.collect.Sets;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
@@ -24,7 +25,8 @@ public class DemoQuotesSpringbootApplication {
                 .apis(RequestHandlerSelectors.basePackage("com.quotes"))
                 .paths(PathSelectors.any())
                 .build()
-                .apiInfo(apiInfo());
+                .apiInfo(apiInfo())
+                .protocols(Sets.newHashSet("HTTP"));
     }
 
     private ApiInfo apiInfo() {
