@@ -4,27 +4,32 @@ import com.quotes.exception.QuoteException;
 import com.quotes.model.ErrorCodes;
 import com.quotes.model.QuotesElement;
 import com.quotes.model.ResponseModel;
-import com.quotes.repository.QuotesRepository;
+import com.quotes.repository.QuotesDBRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Iterator;
+import java.util.List;
 
 
 @Service
 public class QuotesService {
 
     @Autowired
-    QuotesRepository repository;
+    QuotesDBRepository repository;
 
     /**
      * If present, returns QuotesElement of id inside of response body.
      *
      * @return ResponseEntity
      */
-    public ResponseEntity<Object> getQuote(Integer id) throws QuoteException {
-        checkIfKeyPresent(id, 1);
-        return ResponseModel.generateResponse("GetRequestSuccess", HttpStatus.FOUND, repository.get(id));
+    public ResponseEntity<Object> getQuote(Long id) throws QuoteException {
+        checkIfKeyPresent(id);
+        return ResponseModel.generateResponse("GetRequestSuccess", HttpStatus.FOUND, repository.findById(id));
     }
 
     /**
@@ -35,8 +40,9 @@ public class QuotesService {
      * @return ResponseEntity
      */
     public ResponseEntity<Object> getAllQuotes() throws QuoteException {
-        checkIfKeyPresent(0, 1);
-        return ResponseModel.generateResponse("GetRequestSuccess", HttpStatus.FOUND, repository.getAll());
+        //long num = 0;
+        //checkIfKeyPresent(num); //fixthis
+        return ResponseModel.generateResponse("GetRequestSuccess", HttpStatus.FOUND, repository.findAll());
     }
 
     /**
@@ -46,8 +52,8 @@ public class QuotesService {
      */
     public ResponseEntity<Object> addQuote(QuotesElement newQuote) throws QuoteException {
         validateQuotesElement(newQuote);
-        checkIfValuePresent(newQuote, 0);
-        repository.addQuote(newQuote);
+        //checkIfValuePresent(newQuote);
+        repository.save(newQuote);
         return ResponseModel.generateResponse("ElementSuccessfulyAdded", HttpStatus.CREATED, newQuote);
     }
 
@@ -57,11 +63,12 @@ public class QuotesService {
      * @return ResponseEntity
      */
 
-    public ResponseEntity<Object> putQuote(Integer id, QuotesElement newQuote) throws QuoteException {
+    public ResponseEntity<Object> putQuote(Long id, QuotesElement newQuote) throws QuoteException {
         validateQuotesElement(newQuote);
-        checkIfKeyPresent(id, 1);
-        checkIfValuePresent(newQuote, 0);
-        repository.putQuote(id, newQuote);
+        checkIfKeyPresent(id);
+        checkIfValuePresent(newQuote);
+        repository.findById(id).get().setAuthor(newQuote.getAuthor());
+        repository.findById(id).get().setQuote(newQuote.getQuote());
         return ResponseModel.generateResponse("PutRequestSuccess", HttpStatus.OK, newQuote);
     }
 
@@ -70,9 +77,14 @@ public class QuotesService {
      *
      * @return ResponseEntity
      */
-    public ResponseEntity<Object> fixQuote(Integer id, QuotesElement newQuote) throws QuoteException {
-        checkIfKeyPresent(id, 1);
-        repository.fixQuote(id, newQuote);
+    public ResponseEntity<Object> fixQuote(Long id, QuotesElement newQuote) throws QuoteException {
+        checkIfKeyPresent(id);
+        QuotesElement elementToFix = repository.findById(id).get();
+        if (newQuote.getAuthor().equals("")) {
+            repository.findById(id).get().setQuote(newQuote.getQuote());
+        } else {
+            repository.findById(id).get().setAuthor(newQuote.getAuthor());
+        }
         return ResponseModel.generateResponse("PatchRequestSuccess", HttpStatus.OK, newQuote);
     }
 
@@ -81,9 +93,9 @@ public class QuotesService {
      *
      * @return ResponseEntity
      */
-    public ResponseEntity<Object> delQuote(int id) throws QuoteException {
-        checkIfKeyPresent(id, 1);
-        repository.remove(id);
+    public ResponseEntity<Object> delQuote(long id) throws QuoteException {
+        checkIfKeyPresent(id);
+        repository.deleteById(id);
         return ResponseModel.generateResponse("ElementDeleted", HttpStatus.OK, null);
     }
 
@@ -101,20 +113,9 @@ public class QuotesService {
      * Use mode: 0 to throw QuoteAlreadyThereException<br>
      * Uso mode: 1 to throw QuoteNotFoundException
      */
-    private void checkIfKeyPresent(Integer id, Integer mode) throws QuoteException {
-        switch (mode) {
-            case 1:
-                if (!repository.isThere(id)) {
-                    throw new QuoteException(ErrorCodes.QUOTE_NOT_FOUND);
-                }
-                break;
-            case 0:
-                if (repository.isThere(id)) {
-                    throw new QuoteException(ErrorCodes.QUOTE_ALREADY_PRESENT);
-                }
-                break;
-            default:
-                throw new IllegalStateException("Unexpected value: " + mode);
+    private void checkIfKeyPresent(Long id) throws QuoteException {
+        if (!repository.findById(id).isPresent()) { //va in null
+            throw new QuoteException(ErrorCodes.QUOTE_NOT_FOUND);
         }
     }
 
@@ -123,21 +124,17 @@ public class QuotesService {
      * Use mode: 0 to throw QuoteAlreadyPresentException<br>
      * use mode: 1 to throw QuoteNotFoundException
      */
-    private void checkIfValuePresent(QuotesElement checkedElement, Integer mode) throws QuoteException {
-        switch (mode) {
-            case 0:
-                if (repository.containsQuoteElement(checkedElement)) {
-                    throw new QuoteException(ErrorCodes.QUOTE_ALREADY_PRESENT);
-                }
-                break;
-            case 1:
-                if (!repository.containsQuoteElement(checkedElement)) {
-                    throw new QuoteException(ErrorCodes.QUOTE_NOT_FOUND);
-                }
-                break;
-            default:
-                throw new IllegalStateException("Unexpected value: " + mode);
+    private void checkIfValuePresent(QuotesElement checkedElement) throws QuoteException {
+        Iterator<QuotesElement> iterator = repository.findAll().iterator();
+        boolean result = false;
+        while (iterator.hasNext()) {
+            QuotesElement next = iterator.next();
+            if (next.equals(checkedElement)) {
+                result = true;
+            }
+            iterator.next();
         }
+        if (result) throw new QuoteException(ErrorCodes.QUOTE_ALREADY_PRESENT);
     }
 
     /**
@@ -148,16 +145,35 @@ public class QuotesService {
      */
     public ResponseEntity<Object> getQuoteFrom(String author) throws QuoteException {
         isThereAuthor(author);
-        return ResponseModel.generateResponse("GetRequestSuccessful", HttpStatus.FOUND, repository.getAllFromAuthor(author).stream().toString());
+        return ResponseModel.generateResponse("GetRequestSuccessful", HttpStatus.FOUND, getAllFromAuthor(author).stream().toString());
+    }
+
+    private List<QuotesElement> getAllFromAuthor(String author) {
+        List<QuotesElement> list = new ArrayList<>();
+        Iterator<QuotesElement> iterator = repository.findAll().iterator();
+        while (iterator.hasNext()) {
+            QuotesElement next = iterator.next();
+            if (next.getAuthor().equals(author)) {
+                list.add(next);
+            }
+            iterator.next();
+        }
+        return list;
     }
 
     /**
      * Checks for the presence on an author, throws exception if absent
      */
     private void isThereAuthor(String author) throws QuoteException {
-        if (!repository.isThereAuthor(author)) {
-            throw new QuoteException(ErrorCodes.QUOTE_NOT_FOUND);
+        Iterator<QuotesElement> iterator = repository.findAll().iterator();
+        boolean result = true;
+        while (iterator.hasNext()) {
+            QuotesElement next = iterator.next();
+            if (next.getAuthor().equals(author)) {
+                result = false;
+            }
+            iterator.next();
         }
+        if (result) throw new QuoteException(ErrorCodes.QUOTE_BADLY_WRITTEN);
     }
 }
-

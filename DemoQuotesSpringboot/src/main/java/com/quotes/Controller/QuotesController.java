@@ -28,12 +28,12 @@ public class QuotesController {
     }
 
     @GetMapping("quote/{id}")
-    @ApiParam(name = "QuoteId", type = "Integer", value = "Id of Quote", required = true)
+    @ApiParam(name = "QuoteId", type = "Long", value = "Id of Quote", required = true)
     @ApiOperation(value = "getQuote", notes = "Gets a single quote from Map")
     @ApiResponses(value = {
             @ApiResponse(code = 200, message = "Get Operation success", response = QuoteException.class),
             @ApiResponse(code = 101, message = "Element not found", response = QuoteException.class)})
-    private ResponseEntity<Object> getQuote(@PathVariable Integer id) throws QuoteException {
+    private ResponseEntity<Object> getQuote(@PathVariable Long id) throws QuoteException {
         return service.getQuote(id);
     }
 
@@ -66,25 +66,25 @@ public class QuotesController {
     @ApiResponses(value = {
             @ApiResponse(code = 201, message = "Put Operation success", response = QuoteException.class),
             @ApiResponse(code = 103, message = "Quote not given correctly", response = QuoteException.class)})
-    public ResponseEntity<Object> putQuote(@PathVariable("id") Integer id, @RequestBody QuotesElement quote) throws QuoteException {
+    public ResponseEntity<Object> putQuote(@PathVariable("id") Long id, @RequestBody QuotesElement quote) throws QuoteException {
         return service.putQuote(id, quote);
     }
 
     @PatchMapping("fixquote/{id}")
-    @ApiParam(name = "QuoteId", type = "Integer", value = "Id of Quote", required = true)
+    @ApiParam(name = "QuoteId", type = "Long", value = "Id of Quote", required = true)
     @ApiOperation(value = "fixQuote", notes = "Patch operation on a quote in Map")
     @ApiResponses(value = {
             @ApiResponse(code = 201, message = "Patch Operation success", response = QuoteException.class),
             @ApiResponse(code = 103, message = "Quote not given correctly", response = QuoteException.class)})
-    public ResponseEntity<Object> fixQuote(@PathVariable("id") Integer id, @RequestBody QuotesElement quote) throws QuoteException {
+    public ResponseEntity<Object> fixQuote(@PathVariable("id") Long id, @RequestBody QuotesElement quote) throws QuoteException {
         return service.fixQuote(id, quote);
     }
 
     @DeleteMapping("deletequote/{id}")
-    @ApiParam(name = "QuoteId", type = "Integer", value = "Id of Quote", required = true)
+    @ApiParam(name = "QuoteId", type = "Long", value = "Id of Quote", required = true)
     @ApiOperation(value = "delQuote", notes = "Deletes a quote from the Map")
     @ApiResponse(code = 101, message = "Element not found", response = QuoteException.class)
-    public ResponseEntity<Object> delQuote(@PathVariable("id") Integer id) throws QuoteException {
+    public ResponseEntity<Object> delQuote(@PathVariable("id") Long id) throws QuoteException {
         return service.delQuote(id);
     }
 }
