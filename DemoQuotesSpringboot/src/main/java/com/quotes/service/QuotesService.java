@@ -10,10 +10,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Iterator;
-import java.util.List;
+import java.util.NoSuchElementException;
 
 
 @Service
@@ -33,26 +30,26 @@ public class QuotesService {
     }
 
     /**
-     * Checks if the Map is empty.<br>
+     * Checks if the DB is empty.<br>
      * If not, returns all QuotesElement (in Response body)<br>
-     * if it is, return an error.
+     * if empty, returns an error.
      *
      * @return ResponseEntity
      */
     public ResponseEntity<Object> getAllQuotes() throws QuoteException {
-        //long num = 0;
-        //checkIfKeyPresent(num); //fixthis
+        if (!repository.findById(1L).isPresent()) throw new QuoteException(ErrorCodes.QUOTE_NOT_FOUND);
         return ResponseModel.generateResponse("GetRequestSuccess", HttpStatus.FOUND, repository.findAll());
     }
 
     /**
-     * Saves one QuotesElement to the Map.
+     * Checks for both validity and non redundancy of input QuotesElement.<br>
+     * Saves one QuotesElement to the DB.
      *
      * @return ResponseEntity
      */
     public ResponseEntity<Object> addQuote(QuotesElement newQuote) throws QuoteException {
         validateQuotesElement(newQuote);
-        //checkIfValuePresent(newQuote);
+        checkIfValuePresent(newQuote);
         repository.save(newQuote);
         return ResponseModel.generateResponse("ElementSuccessfulyAdded", HttpStatus.CREATED, newQuote);
     }
@@ -62,30 +59,55 @@ public class QuotesService {
      *
      * @return ResponseEntity
      */
-
     public ResponseEntity<Object> putQuote(Long id, QuotesElement newQuote) throws QuoteException {
         validateQuotesElement(newQuote);
-        checkIfKeyPresent(id);
         checkIfValuePresent(newQuote);
-        repository.findById(id).get().setAuthor(newQuote.getAuthor());
-        repository.findById(id).get().setQuote(newQuote.getQuote());
+        try {
+            QuotesElement a = repository.findById(id).get();
+            a.setAuthor(newQuote.getAuthor());
+            a.setQuote(newQuote.getQuote());
+            repository.save(a);
+        } catch (NoSuchElementException e) {
+            throw new QuoteException(ErrorCodes.QUOTE_NOT_FOUND);
+        }
         return ResponseModel.generateResponse("PutRequestSuccess", HttpStatus.OK, newQuote);
     }
 
     /**
-     * Checks if the QuotesElement is present, if true changes the correct filed in the QuotesElement
+     * Checks if the QuotesElement is present, if true changes the correct field in the QuotesElement
      *
      * @return ResponseEntity
      */
-    public ResponseEntity<Object> fixQuote(Long id, QuotesElement newQuote) throws QuoteException {
+    public ResponseEntity<Object> fixAuthor(Long id, String newAuthor) throws QuoteException {
         checkIfKeyPresent(id);
-        QuotesElement elementToFix = repository.findById(id).get();
-        if (newQuote.getAuthor().equals("")) {
-            repository.findById(id).get().setQuote(newQuote.getQuote());
-        } else {
-            repository.findById(id).get().setAuthor(newQuote.getAuthor());
-        }
+        QuotesElement a = repository.findById(id).get();
+        a.setAuthor(newAuthor);
+        repository.save(a);
+        return ResponseModel.generateResponse("PatchRequestSuccess", HttpStatus.OK, newAuthor);
+    }
+
+    /**
+     * Checks if the QuotesElement is present, if true changes the correct field in the QuotesElement
+     *
+     * @return ResponseEntity
+     */
+    public ResponseEntity<Object> fixQuote(Long id, String newQuote) throws QuoteException {
+        checkIfKeyPresent(id);
+        QuotesElement a = repository.findById(id).get();
+        a.setQuote(newQuote);
+        repository.save(a);
         return ResponseModel.generateResponse("PatchRequestSuccess", HttpStatus.OK, newQuote);
+    }
+
+    /**
+     * Checks for the presence of the author filed in Map repository.
+     * if present, returns all quotes as string.
+     *
+     * @return ResponseEntity
+     */
+    public ResponseEntity<Object> getQuoteFrom(String author) throws QuoteException {
+        isThereAuthor(author);
+        return ResponseModel.generateResponse("GetRequestSuccessful", HttpStatus.FOUND, repository.getQuotesElementByAuthor(author));
     }
 
     /**
@@ -109,71 +131,33 @@ public class QuotesService {
     }
 
     /**
-     * Checks for the presence of input ID as Key in Map.<br>
-     * Use mode: 0 to throw QuoteAlreadyThereException<br>
-     * Uso mode: 1 to throw QuoteNotFoundException
+     * Checks for the presence of input ID as Key in DB.
      */
     private void checkIfKeyPresent(Long id) throws QuoteException {
-        if (!repository.findById(id).isPresent()) { //va in null
+        if (!repository.findById(id).isPresent()) {
             throw new QuoteException(ErrorCodes.QUOTE_NOT_FOUND);
         }
     }
 
     /**
-     * Checks for the presence of input QuotesElement as Value in Map<br>
-     * Use mode: 0 to throw QuoteAlreadyPresentException<br>
-     * use mode: 1 to throw QuoteNotFoundException
+     * Checks for the presence of input QuotesElement as Value in DB<br>
      */
     private void checkIfValuePresent(QuotesElement checkedElement) throws QuoteException {
-        Iterator<QuotesElement> iterator = repository.findAll().iterator();
         boolean result = false;
-        while (iterator.hasNext()) {
-            QuotesElement next = iterator.next();
+        for (QuotesElement next : repository.findAll()) {//create custom Query
             if (next.equals(checkedElement)) {
                 result = true;
+                break;
             }
-            iterator.next();
         }
         if (result) throw new QuoteException(ErrorCodes.QUOTE_ALREADY_PRESENT);
-    }
-
-    /**
-     * Checks for the presence of the author filed in Map repository.
-     * if present, returns all quotes as string.
-     *
-     * @return ResponseEntity
-     */
-    public ResponseEntity<Object> getQuoteFrom(String author) throws QuoteException {
-        isThereAuthor(author);
-        return ResponseModel.generateResponse("GetRequestSuccessful", HttpStatus.FOUND, getAllFromAuthor(author).stream().toString());
-    }
-
-    private List<QuotesElement> getAllFromAuthor(String author) {
-        List<QuotesElement> list = new ArrayList<>();
-        Iterator<QuotesElement> iterator = repository.findAll().iterator();
-        while (iterator.hasNext()) {
-            QuotesElement next = iterator.next();
-            if (next.getAuthor().equals(author)) {
-                list.add(next);
-            }
-            iterator.next();
-        }
-        return list;
     }
 
     /**
      * Checks for the presence on an author, throws exception if absent
      */
     private void isThereAuthor(String author) throws QuoteException {
-        Iterator<QuotesElement> iterator = repository.findAll().iterator();
-        boolean result = true;
-        while (iterator.hasNext()) {
-            QuotesElement next = iterator.next();
-            if (next.getAuthor().equals(author)) {
-                result = false;
-            }
-            iterator.next();
-        }
-        if (result) throw new QuoteException(ErrorCodes.QUOTE_BADLY_WRITTEN);
+        if (repository.getQuotesElementByAuthor(author).isEmpty())
+            throw new QuoteException(ErrorCodes.QUOTE_BADLY_WRITTEN);
     }
 }
