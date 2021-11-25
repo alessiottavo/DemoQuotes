@@ -1,6 +1,6 @@
-package com.quotes.exception;
+package it.com.demo.exception;
 
-import com.quotes.model.ErrorCodes;
+import it.com.demo.model.ErrorCodes;
 import org.springframework.http.HttpStatus;
 
 public class QuoteException extends Exception {

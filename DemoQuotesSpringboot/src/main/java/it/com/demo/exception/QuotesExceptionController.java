@@ -1,6 +1,6 @@
-package com.quotes.exception;
+package it.com.demo.exception;
 
-import com.quotes.model.ErrorResponse;
+import it.com.demo.model.ErrorResponse;
 import org.springframework.http.*;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;

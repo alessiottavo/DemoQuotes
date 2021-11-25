@@ -1,4 +1,4 @@
-package com.quotes.model;
+package it.com.demo.model;
 
 
 import com.fasterxml.jackson.annotation.JsonIgnore;

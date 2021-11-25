@@ -1,4 +1,4 @@
-package com.quotes.demoquotesspringboot;
+package it.com.demo.demoquotesspringboot;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

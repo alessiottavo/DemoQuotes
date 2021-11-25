@@ -1,4 +1,4 @@
-package com.quotes;
+package it.com.demo;
 
 import com.google.common.collect.Sets;
 import org.springframework.boot.SpringApplication;

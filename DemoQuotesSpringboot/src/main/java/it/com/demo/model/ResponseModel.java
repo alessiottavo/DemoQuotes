@@ -1,8 +1,7 @@
-package com.quotes.model;
+package it.com.demo.model;
 
 import org.springframework.http.*;
 
-import java.time.ZonedDateTime;
 import java.util.HashMap;
 import java.util.Map;
 

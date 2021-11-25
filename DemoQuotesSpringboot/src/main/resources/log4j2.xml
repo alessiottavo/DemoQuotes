@@ -1,0 +1,39 @@
+<Configuration>
+
+    <Appenders>
+
+        <Console name="Console" target="SYSTEM_OUT">
+
+            <PatternLayout
+
+                    pattern="%d{yyyy-MM-dd HH:mm:ss} [%t] %-5level %-50c{3.} - %msg %n"/>
+
+            <!--%d = date and time %t = thread name %level = log level %c = logger
+
+            name %msg = log message %n = line separator -5 used to give 5 blank spaces
+
+            {3.} used to shorten the logo name -->
+
+        </Console>
+        <File name="File" fileName="LOGfile.log">
+
+            <PatternLayout
+
+                    pattern="%d [%t] %-5level %-50c{3.} - %msg %n"/>
+
+        </File>
+
+    </Appenders>
+    <Loggers>
+
+        <Root level="info">
+
+            <AppenderRef ref="Console"/>
+
+            <AppenderRef ref="File"/>
+
+        </Root>
+
+    </Loggers>
+
+</Configuration>
