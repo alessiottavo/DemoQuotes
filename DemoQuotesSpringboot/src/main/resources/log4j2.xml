@@ -15,7 +15,7 @@
             {3.} used to shorten the logo name -->
 
         </Console>
-        <File name="File" fileName="LOGfile.log">
+        <File name="File" fileName="logfile.log">
 
             <PatternLayout
 

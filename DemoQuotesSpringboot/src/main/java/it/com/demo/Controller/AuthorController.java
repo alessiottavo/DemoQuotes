@@ -43,6 +43,4 @@ public class AuthorController {
     public ResponseEntity<Object> delAuthor(@PathVariable("id") Long id) throws QuoteException {
         return service.delAuthor(id);
     }
-
-
 }

@@ -22,7 +22,7 @@ public class Author {
 
     @JsonBackReference
     @OneToMany(
-            mappedBy = "author",
+            mappedBy = "quote",
             cascade = CascadeType.ALL,
             fetch = FetchType.LAZY
     )
