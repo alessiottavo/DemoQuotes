@@ -1,12 +1,17 @@
 package it.com.demo.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
 
 import javax.persistence.*;
 
 @JsonIgnoreProperties({"hibernateLazyInitializer"})
 @Entity
+@Data
+@NoArgsConstructor
 @Table(name = "Quote")
 public class Quote {
 
@@ -25,27 +30,8 @@ public class Quote {
     @ManyToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
     private Author author;
 
-    public Long getQuoteId() {
-        return quoteId;
-    }
-
-    public void setQuoteId(Long quoteId) {
-        this.quoteId = quoteId;
-    }
-
-    public String getQuote() {
-        return quote;
-    }
-
-    public void setQuote(String quote) {
+/*    public Quote(String quote, Author author) {
         this.quote = quote;
-    }
-
-    public Author getAuthor() {
-        return author;
-    }
-
-    public void setAuthor(Author author) {
         this.author = author;
-    }
+    }*/
 }
