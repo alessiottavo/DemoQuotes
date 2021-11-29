@@ -970,3 +970,59 @@ Caused by: java.net.ConnectException: Connection refused: connect
 2021-11-26 15:13:14,562 [SpringApplicationShutdownHook] INFO  org.hib.too.sch.int.SchemaDropperImpl$DelayedDropActionImpl - HHH000477: Starting delayed evictData of schema as part of SessionFactory shut-down' 
 2021-11-26 15:13:14,610 [SpringApplicationShutdownHook] INFO  com.zax.hik.HikariDataSource                       - HikariPool-1 - Shutdown initiated... 
 2021-11-26 15:13:14,610 [SpringApplicationShutdownHook] INFO  com.zax.hik.HikariDataSource                       - HikariPool-1 - Shutdown completed. 
+2021-11-26 15:13:21,231 [main] INFO  it.com.dem.DemoQuotesSpringbootApplication         - Starting DemoQuotesSpringbootApplication using Java 11.0.13 on SPXMIW6214 with PID 10696 (C:\Users\alessio.ottaviani\eclipse-workspace\DemoRestMassime\DemoQuotesSpringboot\target\classes started by alessio.ottaviani in C:\Users\alessio.ottaviani\eclipse-workspace\DemoRestMassime\DemoQuotesSpringboot) 
+2021-11-26 15:13:21,246 [main] INFO  it.com.dem.DemoQuotesSpringbootApplication         - No active profile set, falling back to default profiles: default 
+2021-11-26 15:13:21,862 [main] INFO  org.spr.dat.rep.con.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode. 
+2021-11-26 15:13:21,894 [main] INFO  org.spr.dat.rep.con.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 33 ms. Found 2 JPA repository interfaces. 
+2021-11-26 15:13:22,214 [main] INFO  org.spr.boo.web.emb.tom.TomcatWebServer            - Tomcat initialized with port(s): 8080 (http) 
+2021-11-26 15:13:22,214 [main] INFO  org.apa.coy.htt.Http11NioProtocol                  - Initializing ProtocolHandler ["http-nio-8080"] 
+2021-11-26 15:13:22,214 [main] INFO  org.apa.cat.cor.StandardService                    - Starting service [Tomcat] 
+2021-11-26 15:13:22,214 [main] INFO  org.apa.cat.cor.StandardEngine                     - Starting Servlet engine: [Apache Tomcat/9.0.54] 
+2021-11-26 15:13:22,295 [main] INFO  org.apa.cat.cor.Con.[To.[lo.[/]                    - Initializing Spring embedded WebApplicationContext 
+2021-11-26 15:13:22,295 [main] INFO  org.spr.boo.web.ser.con.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1033 ms 
+2021-11-26 15:13:22,414 [main] INFO  org.hib.jpa.int.uti.LogHelper                      - HHH000204: Processing PersistenceUnitInfo [name: default] 
+2021-11-26 15:13:22,462 [main] INFO  org.hib.Version                                    - HHH000412: Hibernate ORM core version 5.4.32.Final 
+2021-11-26 15:13:22,546 [main] INFO  org.hib.ann.com.Version                            - HCANN000001: Hibernate Commons Annotations {5.1.2.Final} 
+2021-11-26 15:13:22,614 [main] INFO  com.zax.hik.HikariDataSource                       - HikariPool-1 - Starting... 
+2021-11-26 15:13:22,848 [main] INFO  com.zax.hik.HikariDataSource                       - HikariPool-1 - Start completed. 
+2021-11-26 15:13:22,864 [main] INFO  org.hib.dia.Dialect                                - HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect 
+2021-11-26 15:13:23,450 [main] INFO  org.hib.eng.tra.jta.pla.int.JtaPlatformInitiator   - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform] 
+2021-11-26 15:13:23,450 [main] INFO  org.spr.orm.jpa.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default' 
+2021-11-26 15:13:23,847 [main] WARN  org.spr.boo.aut.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning 
+2021-11-26 15:13:24,047 [main] INFO  org.apa.coy.htt.Http11NioProtocol                  - Starting ProtocolHandler ["http-nio-8080"] 
+2021-11-26 15:13:24,063 [main] INFO  org.spr.boo.web.emb.tom.TomcatWebServer            - Tomcat started on port(s): 8080 (http) with context path '' 
+2021-11-26 15:13:24,094 [main] INFO  it.com.dem.DemoQuotesSpringbootApplication         - Started DemoQuotesSpringbootApplication in 3.11 seconds (JVM running for 4.186) 
+2021-11-26 15:13:55,838 [http-nio-8080-exec-1] INFO  org.apa.cat.cor.Con.[To.[lo.[/]                    - Initializing Spring DispatcherServlet 'dispatcherServlet' 
+2021-11-26 15:13:55,838 [http-nio-8080-exec-1] INFO  org.spr.web.ser.DispatcherServlet                  - Initializing Servlet 'dispatcherServlet' 
+2021-11-26 15:13:55,838 [http-nio-8080-exec-1] INFO  org.spr.web.ser.DispatcherServlet                  - Completed initialization in 0 ms 
+2021-11-26 16:12:09,276 [HikariPool-1 housekeeper] WARN  com.zax.hik.poo.HikariPool                         - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=9m45s614ms176µs). 
+2021-11-26 18:01:02,928 [SpringApplicationShutdownHook] INFO  org.spr.orm.jpa.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default' 
+2021-11-26 18:01:02,928 [SpringApplicationShutdownHook] INFO  org.hib.too.sch.int.SchemaDropperImpl$DelayedDropActionImpl - HHH000477: Starting delayed evictData of schema as part of SessionFactory shut-down' 
+2021-11-26 18:01:02,960 [SpringApplicationShutdownHook] INFO  com.zax.hik.HikariDataSource                       - HikariPool-1 - Shutdown initiated... 
+2021-11-26 18:01:02,975 [SpringApplicationShutdownHook] INFO  com.zax.hik.HikariDataSource                       - HikariPool-1 - Shutdown completed. 
+2021-11-29 10:23:24,914 [main] INFO  it.com.dem.DemoQuotesSpringbootApplication         - Starting DemoQuotesSpringbootApplication using Java 11.0.13 on SPXMIW6214 with PID 12752 (C:\Users\alessio.ottaviani\eclipse-workspace\DemoRestMassime\DemoQuotesSpringboot\target\classes started by alessio.ottaviani in C:\Users\alessio.ottaviani\eclipse-workspace\DemoRestMassime\DemoQuotesSpringboot) 
+2021-11-29 10:23:24,914 [main] INFO  it.com.dem.DemoQuotesSpringbootApplication         - No active profile set, falling back to default profiles: default 
+2021-11-29 10:23:25,557 [main] INFO  org.spr.dat.rep.con.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode. 
+2021-11-29 10:23:25,595 [main] INFO  org.spr.dat.rep.con.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 37 ms. Found 2 JPA repository interfaces. 
+2021-11-29 10:23:25,926 [main] INFO  org.spr.boo.web.emb.tom.TomcatWebServer            - Tomcat initialized with port(s): 8080 (http) 
+2021-11-29 10:23:25,942 [main] INFO  org.apa.coy.htt.Http11NioProtocol                  - Initializing ProtocolHandler ["http-nio-8080"] 
+2021-11-29 10:23:25,942 [main] INFO  org.apa.cat.cor.StandardService                    - Starting service [Tomcat] 
+2021-11-29 10:23:25,942 [main] INFO  org.apa.cat.cor.StandardEngine                     - Starting Servlet engine: [Apache Tomcat/9.0.54] 
+2021-11-29 10:23:26,011 [main] INFO  org.apa.cat.cor.Con.[To.[lo.[/]                    - Initializing Spring embedded WebApplicationContext 
+2021-11-29 10:23:26,011 [main] INFO  org.spr.boo.web.ser.con.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1063 ms 
+2021-11-29 10:23:26,111 [main] INFO  org.hib.jpa.int.uti.LogHelper                      - HHH000204: Processing PersistenceUnitInfo [name: default] 
+2021-11-29 10:23:26,174 [main] INFO  org.hib.Version                                    - HHH000412: Hibernate ORM core version 5.4.32.Final 
+2021-11-29 10:23:26,274 [main] INFO  org.hib.ann.com.Version                            - HCANN000001: Hibernate Commons Annotations {5.1.2.Final} 
+2021-11-29 10:23:26,359 [main] INFO  com.zax.hik.HikariDataSource                       - HikariPool-1 - Starting... 
+2021-11-29 10:23:26,628 [main] INFO  com.zax.hik.HikariDataSource                       - HikariPool-1 - Start completed. 
+2021-11-29 10:23:26,644 [main] INFO  org.hib.dia.Dialect                                - HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect 
+2021-11-29 10:23:27,145 [main] INFO  org.hib.eng.tra.jta.pla.int.JtaPlatformInitiator   - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform] 
+2021-11-29 10:23:27,145 [main] INFO  org.spr.orm.jpa.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default' 
+2021-11-29 10:23:27,561 [main] WARN  org.spr.boo.aut.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning 
+2021-11-29 10:23:27,784 [main] INFO  org.apa.coy.htt.Http11NioProtocol                  - Starting ProtocolHandler ["http-nio-8080"] 
+2021-11-29 10:23:27,800 [main] INFO  org.spr.boo.web.emb.tom.TomcatWebServer            - Tomcat started on port(s): 8080 (http) with context path '' 
+2021-11-29 10:23:27,831 [main] INFO  it.com.dem.DemoQuotesSpringbootApplication         - Started DemoQuotesSpringbootApplication in 3.141 seconds (JVM running for 4.136) 
+2021-11-29 10:23:34,007 [SpringApplicationShutdownHook] INFO  org.spr.orm.jpa.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default' 
+2021-11-29 10:23:34,007 [SpringApplicationShutdownHook] INFO  org.hib.too.sch.int.SchemaDropperImpl$DelayedDropActionImpl - HHH000477: Starting delayed evictData of schema as part of SessionFactory shut-down' 
+2021-11-29 10:23:34,037 [SpringApplicationShutdownHook] INFO  com.zax.hik.HikariDataSource                       - HikariPool-1 - Shutdown initiated... 
+2021-11-29 10:23:34,037 [SpringApplicationShutdownHook] INFO  com.zax.hik.HikariDataSource                       - HikariPool-1 - Shutdown completed. 

@@ -7,6 +7,10 @@ import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiParam;
 import io.swagger.annotations.ApiResponse;
 import io.swagger.annotations.ApiResponses;
+import org.apache.logging.log4j.Logger;
+import org.apache.logging.log4j.LogManager;
+import org.hibernate.annotations.common.util.impl.LoggerFactory;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -14,6 +18,8 @@ import org.springframework.web.bind.annotation.*;
 @RestController
 @RequestMapping("/allAuthors")
 public class AuthorController {
+
+    private static final Logger logger = LogManager.getLogger(AuthorController.class);
 
     @Autowired
     AuthorService service;
@@ -24,7 +30,9 @@ public class AuthorController {
             @ApiResponse(code = 200, message = "Get operation sucess", response = QuoteException.class),
             @ApiResponse(code = 101, message = "Empty repository", response = QuoteException.class)})
     private ResponseEntity<Object> getAllQuotes() throws QuoteException {
+        logger.info("Inside GET method");
         return service.getAllAuthors();
+
     }
 
     @PatchMapping("/{id}/patch")
@@ -33,6 +41,7 @@ public class AuthorController {
             @ApiResponse(code = 201, message = "Patch Operation success", response = QuoteException.class),
             @ApiResponse(code = 103, message = "Author not given correctly", response = QuoteException.class)})
     private ResponseEntity<Object> patchAuthor(@PathVariable("id") Long authorId, @RequestBody Author author) throws QuoteException {
+        logger.info("Inside PATCH method");
         return service.patchAuthor(authorId, author);
     }
 
@@ -41,6 +50,7 @@ public class AuthorController {
     @ApiOperation(value = "delAuthor", notes = "Deletes an author from the DB")
     @ApiResponse(code = 101, message = "Element not found", response = QuoteException.class)
     public ResponseEntity<Object> delAuthor(@PathVariable("id") Long id) throws QuoteException {
+        logger.info("Inside DEL method");
         return service.delAuthor(id);
     }
 }

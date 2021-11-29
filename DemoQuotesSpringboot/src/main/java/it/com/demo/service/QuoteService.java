@@ -6,6 +6,8 @@ import it.com.demo.model.ErrorCodes;
 import it.com.demo.model.Quote;
 import it.com.demo.model.ResponseModel;
 import it.com.demo.repository.QuoteRepository;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -16,6 +18,8 @@ import java.util.Set;
 
 @Service
 public class QuoteService {
+
+    private static final Logger logger = LogManager.getLogger(QuoteService.class);
 
     @Autowired
     QuoteRepository quoteRepository;
@@ -31,6 +35,7 @@ public class QuoteService {
         //validateQuote(quote);
         checkQuoteRedundancy(quote);
         quoteRepository.save(addToAuthor(quote));
+        logger.info("POST method returned");
         return ResponseModel.generateResponse("PostSuccess", HttpStatus.CREATED, quote);
     }
 
@@ -62,6 +67,7 @@ public class QuoteService {
      */
     public ResponseEntity<Object> getAllQuotes() throws QuoteException {
         if (quoteRepository.findAll().isEmpty()) throw new QuoteException(ErrorCodes.QUOTE_NOT_FOUND);
+        logger.info("GET method returned");
         return ResponseModel.generateResponse("GetSuccess", HttpStatus.FOUND, quoteRepository.findAll());
     }
 
@@ -75,6 +81,7 @@ public class QuoteService {
         checkIfQuoteExists(id);
         quoteRepository.findById(id).get().setQuote(quote.getQuote());
         quoteRepository.findById(id).get().setAuthor(quote.getAuthor());
+        logger.info("PUT method returned");
         return ResponseModel.generateResponse("PutSuccess", HttpStatus.ACCEPTED, quote);
     }
 
@@ -98,6 +105,7 @@ public class QuoteService {
         checkIfQuoteExists(id);
         Quote newQuote = quoteRepository.findById(id).get();
         newQuote.setQuote(quote.getQuote());
+        logger.info("PATCH method returned");
         return ResponseModel.generateResponse("PatchSuccess", HttpStatus.ACCEPTED, newQuote);
     }
 
@@ -109,6 +117,7 @@ public class QuoteService {
     public ResponseEntity<Object> delQuote(Long id) throws QuoteException {
         checkIfQuoteExists(id);
         quoteRepository.deleteById(id);
+        logger.info("DEL method returned");
         return ResponseModel.generateResponse("DeleteSuccess", HttpStatus.ACCEPTED, id);
     }
 
@@ -120,6 +129,7 @@ public class QuoteService {
     public ResponseEntity<Object> getAllQuotesFromAuthor(Long authorId) throws QuoteException {
         authorService.checkIfAuthorPresent(authorId);
         Set<Quote> quotes = quoteRepository.findAllByAuthorId(authorId);
+        logger.info("GET method returned");
         return ResponseModel.generateResponse("GetSuccess", HttpStatus.FOUND, quotes);
     }
 }
