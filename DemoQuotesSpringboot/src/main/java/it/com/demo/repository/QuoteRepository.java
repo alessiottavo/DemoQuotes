@@ -1,5 +1,6 @@
 package it.com.demo.repository;
 
+import it.com.demo.model.Author;
 import it.com.demo.model.Quote;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
@@ -18,4 +19,5 @@ public interface QuoteRepository extends JpaRepository<Quote, Long> {
      * returns a Set containing all Quotes with input author_id.
      */
     Set<Quote> findAllByAuthorId(Long id);
+
 }

@@ -8,6 +8,7 @@ import lombok.ToString;
 import org.hibernate.Hibernate;
 
 import javax.persistence.*;
+import java.util.Date;
 import java.util.HashSet;
 import java.util.Objects;
 import java.util.Set;
@@ -32,6 +33,24 @@ public class Author {
     @Column(name = "name",
             nullable = false)
     private String name;
+    @Column(name = "surname",
+            nullable = false)
+    private String surname;
+    @Column(name = "date_of_birth",
+            nullable = false)
+    private Date dateOfBirth;
+    @Column(name = "date_of_death",
+            nullable = true)
+    private Date dateOfDeath;
+    @Column(name = "title",
+            nullable = false)
+    private String title;
+    @Column(name = "profession",
+            nullable = false)
+    private String profession;
+    @Column(name = "website",
+            nullable = false)
+    private String website;
 
     @JsonBackReference
     @OneToMany(
@@ -42,16 +61,22 @@ public class Author {
     @ToString.Exclude
     private Set<Quote> quotes = new HashSet<>();
 
+/*
+    public Author(String authorname) {
+        this.name = authorname;
+    }
+*/
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
-        if (o == null || Hibernate.getClass(this) != Hibernate.getClass(o)) return false;
+        if (o == null || getClass() != o.getClass()) return false;
         Author author = (Author) o;
-        return id != null && Objects.equals(id, author.id);
+        return Objects.equals(id, author.id) && Objects.equals(name, author.name) && Objects.equals(surname, author.surname) && Objects.equals(dateOfBirth, author.dateOfBirth) && Objects.equals(dateOfDeath, author.dateOfDeath) && Objects.equals(title, author.title) && Objects.equals(profession, author.profession) && Objects.equals(website, author.website) && Objects.equals(quotes, author.quotes);
     }
 
     @Override
     public int hashCode() {
-        return getClass().hashCode();
+        return Objects.hash(id, name, surname, dateOfBirth, dateOfDeath, title, profession, website, quotes);
     }
 }

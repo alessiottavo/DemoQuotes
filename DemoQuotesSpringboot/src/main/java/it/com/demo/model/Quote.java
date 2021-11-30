@@ -7,6 +7,7 @@ import lombok.NoArgsConstructor;
 
 
 import javax.persistence.*;
+import java.util.Date;
 
 @JsonIgnoreProperties({"hibernateLazyInitializer"})
 @Entity
@@ -20,8 +21,12 @@ public class Quote {
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "quote_sequence")
     private Long quoteId;
 
-    @Column
+    @Column(nullable = false)
     private String quote;
+    @Column
+    private String origin;
+    @Column(name = "date_of_quote")
+    private Date dateOfQuote;
 
     @JoinColumn(
             name = "author_id",
@@ -29,6 +34,12 @@ public class Quote {
     )
     @ManyToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
     private Author author;
+
+    public Quote(Long id, String quote_body, Author author) {
+        this.quote = quote_body;
+        this.author = author;
+        this.quoteId = id;
+    }
 
 /*    public Quote(String quote, Author author) {
         this.quote = quote;

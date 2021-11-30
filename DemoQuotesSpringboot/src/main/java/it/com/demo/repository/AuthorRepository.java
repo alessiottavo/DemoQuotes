@@ -9,10 +9,10 @@ public interface AuthorRepository extends JpaRepository<Author, Long> {
     /**
      * Return true if author with input name exists.
      */
-    boolean existsByName(String authorName);
+    boolean existsByNameAndSurname(String authorName, String authorSurname);
 
     /**
      * Returns an Author with input name.
      */
-    Author findByName(String name);
+    Author findByNameAndSurname(String name,String surname);
 }

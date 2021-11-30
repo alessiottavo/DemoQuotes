@@ -35,6 +35,7 @@ public class QuoteService {
         //validateQuote(quote);
         checkQuoteRedundancy(quote);
         quoteRepository.save(addToAuthor(quote));
+        quoteRepository.save(quote);
         logger.info("POST method returned");
         return ResponseModel.generateResponse("PostSuccess", HttpStatus.CREATED, quote);
     }
@@ -54,8 +55,8 @@ public class QuoteService {
      * @return
      */
     private Quote addToAuthor(Quote quote) {
-        if (authorService.repository.existsByName(quote.getAuthor().getName())) {
-            quote.setAuthor(authorService.repository.findByName(quote.getAuthor().getName()));
+        if (authorService.repository.existsByNameAndSurname(quote.getAuthor().getName(), quote.getAuthor().getSurname())) {
+            quote.setAuthor(authorService.repository.findByNameAndSurname(quote.getAuthor().getName(),quote.getAuthor().getSurname()));
         }
         return quote;
     }
@@ -77,7 +78,6 @@ public class QuoteService {
      * @throws QuoteException
      */
     public ResponseEntity<Object> putQuote(Long id, Quote quote) throws QuoteException {
-        //ValidateQuote(quote);
         checkIfQuoteExists(id);
         quoteRepository.findById(id).get().setQuote(quote.getQuote());
         quoteRepository.findById(id).get().setAuthor(quote.getAuthor());
