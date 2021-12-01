@@ -1,21 +1,20 @@
 package it.com.demo.model;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
-import lombok.ToString;
+import lombok.*;
 import org.hibernate.Hibernate;
 
 import javax.persistence.*;
-import java.util.Date;
+import java.time.LocalDate;
 import java.util.HashSet;
 import java.util.Objects;
 import java.util.Set;
 
-@Data
+@Getter
+@Setter
+@ToString
+@RequiredArgsConstructor
 @AllArgsConstructor
-@NoArgsConstructor
 //@JsonIgnoreProperties({"hibernateLazyInitializer"})
 @Entity
 @Table(name = "Author",
@@ -38,10 +37,10 @@ public class Author {
     private String surname;
     @Column(name = "date_of_birth",
             nullable = false)
-    private Date dateOfBirth;
+    private LocalDate dateOfBirth;
     @Column(name = "date_of_death",
             nullable = true)
-    private Date dateOfDeath;
+    private LocalDate dateOfDeath;
     @Column(name = "title",
             nullable = false)
     private String title;
@@ -61,22 +60,27 @@ public class Author {
     @ToString.Exclude
     private Set<Quote> quotes = new HashSet<>();
 
-/*
-    public Author(String authorname) {
-        this.name = authorname;
-    }
-*/
-
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
+        if (o == null || Hibernate.getClass(this) != Hibernate.getClass(o)) return false;
         Author author = (Author) o;
-        return Objects.equals(id, author.id) && Objects.equals(name, author.name) && Objects.equals(surname, author.surname) && Objects.equals(dateOfBirth, author.dateOfBirth) && Objects.equals(dateOfDeath, author.dateOfDeath) && Objects.equals(title, author.title) && Objects.equals(profession, author.profession) && Objects.equals(website, author.website) && Objects.equals(quotes, author.quotes);
+        return id != null && Objects.equals(id, author.id);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, name, surname, dateOfBirth, dateOfDeath, title, profession, website, quotes);
+        return getClass().hashCode();
+    }
+
+    public Author(Long id, String name, String surname, LocalDate dateOfBirth, LocalDate dateOfDeath, String title, String profession, String website) {
+        this.id = id;
+        this.name = name;
+        this.surname = surname;
+        this.dateOfBirth = dateOfBirth;
+        this.dateOfDeath = dateOfDeath;
+        this.title = title;
+        this.profession = profession;
+        this.website = website;
     }
 }

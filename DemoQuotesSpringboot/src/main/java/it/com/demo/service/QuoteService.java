@@ -1,10 +1,8 @@
 package it.com.demo.service;
 
 import it.com.demo.exception.QuoteException;
-import it.com.demo.model.Author;
-import it.com.demo.model.ErrorCodes;
-import it.com.demo.model.Quote;
-import it.com.demo.model.ResponseModel;
+import it.com.demo.model.*;
+import it.com.demo.repository.AuthorRepository;
 import it.com.demo.repository.QuoteRepository;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -13,7 +11,9 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
-import java.util.Set;
+import java.time.LocalDate;
+import java.util.*;
+import java.util.stream.Collectors;
 
 
 @Service
@@ -24,7 +24,7 @@ public class QuoteService {
     @Autowired
     QuoteRepository quoteRepository;
     @Autowired
-    AuthorService authorService;
+    AuthorRepository authorRepository;
 
     /**
      * First checks for quote redundancy, then saves the new quote correctly.
@@ -32,10 +32,8 @@ public class QuoteService {
      * @throws QuoteException
      */
     public ResponseEntity<Object> addQuote(Quote quote) throws QuoteException {
-        //validateQuote(quote);
         checkQuoteRedundancy(quote);
         quoteRepository.save(addToAuthor(quote));
-        quoteRepository.save(quote);
         logger.info("POST method returned");
         return ResponseModel.generateResponse("PostSuccess", HttpStatus.CREATED, quote);
     }
@@ -55,21 +53,22 @@ public class QuoteService {
      * @return
      */
     private Quote addToAuthor(Quote quote) {
-        if (authorService.repository.existsByNameAndSurname(quote.getAuthor().getName(), quote.getAuthor().getSurname())) {
-            quote.setAuthor(authorService.repository.findByNameAndSurname(quote.getAuthor().getName(),quote.getAuthor().getSurname()));
+        if (authorRepository.existsByNameAndSurname(quote.getAuthor().getName(), quote.getAuthor().getSurname())) {
+            quote.setAuthor(authorRepository.findByNameAndSurname(quote.getAuthor().getName(), quote.getAuthor().getSurname()));
         }
         return quote;
     }
 
     /**
-     * Obtains all records from the DB.
+     * Obtains all records from the DB, or all records containing keyword.
      *
      * @throws QuoteException
      */
-    public ResponseEntity<Object> getAllQuotes() throws QuoteException {
-        if (quoteRepository.findAll().isEmpty()) throw new QuoteException(ErrorCodes.QUOTE_NOT_FOUND);
+    public ResponseEntity<Object> getAllQuotes(String key) throws QuoteException {
+        List<Quote> quotesMatch = quoteRepository.findAll().stream().filter(q -> q.getQuote().contains(key)).collect(Collectors.toList());
+        if (quotesMatch.isEmpty()) throw new QuoteException(ErrorCodes.QUOTE_NOT_FOUND);
         logger.info("GET method returned");
-        return ResponseModel.generateResponse("GetSuccess", HttpStatus.FOUND, quoteRepository.findAll());
+        return ResponseModel.generateResponse("GetSuccess", HttpStatus.FOUND, quotesMatch);
     }
 
     /**
@@ -101,7 +100,6 @@ public class QuoteService {
      * @throws QuoteException
      */
     public ResponseEntity<Object> patchQuote(Long id, Quote quote) throws QuoteException {
-        //validateQuote(quote.getQuote());
         checkIfQuoteExists(id);
         Quote newQuote = quoteRepository.findById(id).get();
         newQuote.setQuote(quote.getQuote());
@@ -127,9 +125,59 @@ public class QuoteService {
      * @throws QuoteException
      */
     public ResponseEntity<Object> getAllQuotesFromAuthor(Long authorId) throws QuoteException {
-        authorService.checkIfAuthorPresent(authorId);
         Set<Quote> quotes = quoteRepository.findAllByAuthorId(authorId);
+        if(quotes.isEmpty()) throw new QuoteException(ErrorCodes.QUOTE_NOT_FOUND);
         logger.info("GET method returned");
         return ResponseModel.generateResponse("GetSuccess", HttpStatus.FOUND, quotes);
+    }
+
+    /**
+     * Provides a list of quotes ranked by size with mode:"size"<br>
+     * Provides a list of authors with the nearest birthday with mode:"birthday"
+     *
+     * @throws QuoteException
+     */
+    public ResponseEntity<Object> getRankings(String key) throws QuoteException {
+        List<Quote> allQuotes = quoteRepository.findAll();
+        if(allQuotes.isEmpty()) throw new QuoteException(ErrorCodes.QUOTE_NOT_FOUND);
+        switch (key){
+            case "size":{
+                return rankBiggerToSmaller(allQuotes);
+            }
+            case "birthday":{
+                return rankAuthorByClosestBirthday(authorRepository.findAll());
+            }
+            default:{
+                return ResponseModel.generateResponse("No ranking method provided", HttpStatus.BAD_REQUEST, null);
+            }
+        }
+    }
+
+    /**
+     * Provides a list of authors with the nearest birthday
+     * @param allAuthor
+     * @return
+     */
+    private ResponseEntity<Object> rankAuthorByClosestBirthday(List<Author> allAuthor) {
+        LocalDate today = LocalDate.now();
+        List<Author> rankedByClosestDate = allAuthor.stream()
+                .sorted(Comparator.comparingInt(a->Math.abs(a.getDateOfBirth().getDayOfMonth()-today.getDayOfMonth()))) //In order to get the closest date, first i order by closest day and then by closest month
+                .sorted(Comparator.comparingInt(a-> Math.abs(a.getDateOfBirth().getMonthValue()-today.getMonthValue())))
+                .collect(Collectors.toList());
+        return ResponseModel.generateResponse("ranked by month", HttpStatus.ACCEPTED, rankedByClosestDate);
+    }
+
+    /**
+     * Provides a list of quotes ranked by size
+     * @param allQuotes
+     * @return
+     */
+    private ResponseEntity<Object> rankBiggerToSmaller(List<Quote> allQuotes){
+        List<String> rankedQuotes = allQuotes.stream()
+                .map(Quote::getQuote)
+                .sorted()
+                .collect(Collectors.toList());
+        return ResponseModel.generateResponse("Get Success", HttpStatus.FOUND, rankedQuotes);
+
     }
 }

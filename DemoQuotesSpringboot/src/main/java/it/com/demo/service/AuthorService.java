@@ -1,6 +1,5 @@
 package it.com.demo.service;
 
-import it.com.demo.Controller.AuthorController;
 import it.com.demo.exception.QuoteException;
 import it.com.demo.model.Author;
 import it.com.demo.model.ErrorCodes;

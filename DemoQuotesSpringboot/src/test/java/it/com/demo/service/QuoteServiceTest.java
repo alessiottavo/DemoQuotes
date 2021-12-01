@@ -1,9 +1,13 @@
-/*
 package it.com.demo.service;
 
 import it.com.demo.exception.QuoteException;
-import it.com.demo.model.*;
+import it.com.demo.model.Author;
+import it.com.demo.model.Quote;
+import it.com.demo.model.ResponseModel;
+import it.com.demo.repository.AuthorRepository;
 import it.com.demo.repository.QuoteRepository;
+import org.assertj.core.internal.bytebuddy.dynamic.DynamicType;
+import org.checkerframework.checker.units.qual.A;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Disabled;
@@ -11,94 +15,141 @@ import org.junit.jupiter.api.Test;
 import org.junit.runner.RunWith;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
+import org.mockito.Mockito;
 import org.mockito.junit.MockitoJUnitRunner;
-import org.mockito.stubbing.Answer;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.http.HttpStatus;
-import org.springframework.test.context.junit4.SpringRunner;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Optional;
+import java.time.LocalDate;
+import java.util.*;
 
+import static java.util.Optional.of;
 import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.ArgumentMatchers.any;
-import static org.mockito.Mockito.*;
+import static org.mockito.ArgumentMatchers.anyLong;
+import static org.mockito.Mockito.when;
 
-@RunWith(SpringRunner.class)
+@RunWith(MockitoJUnitRunner.class)
 @SpringBootTest
 class QuoteServiceTest {
 
-    @MockBean
-    QuoteRepository mockRepository;
+    @Mock
+    QuoteRepository quoteRepository;
+    @Mock
+    AuthorRepository authorRepository;
 
-    @Autowired
-    QuoteService underTest;
+    @InjectMocks
+    QuoteService service;
 
-    private static final Author author = new Author("nome");
-    private static final Quote quote = new Quote(1L,"quote text", author);
+    private Author author;
+    private Quote quote;
+    @BeforeEach
+    void setUp() {
+        this.author = new Author(1L,"name", "surname", LocalDate.now(), LocalDate.now(),"Mr.","Worker", "www.site.com");
+        this.quote = new Quote(1L, "text","Origin", LocalDate.now(), author);
+        Mockito.reset();
+    }
 
+    @Test
+    void addQuoteWhenOriginal() throws QuoteException {
+        when(authorRepository.existsByNameAndSurname(any(),any())).thenReturn(false);
+        assertEquals(service.addQuote(quote), ResponseModel.generateResponse("PostSuccess", HttpStatus.CREATED, quote));
+    }
+
+    @Test
+    void addQuoteWhenNotOriginal() {
+        when(quoteRepository.existsByQuote(quote.getQuote())).thenReturn(true);
+        assertThrows(QuoteException.class, () -> {
+            service.addQuote(quote);
+        });
+    }
 
 
     @Test
     void getAllQuotesWhenPresent() throws QuoteException {
-        List<Quote> quotesList = new ArrayList<>();
-        quotesList.add(quote);
-        when(mockRepository.findAll()).thenReturn(quotesList);
-        assertEquals(underTest.getAllQuotes(), ResponseModel.generateResponse("GetSuccess", HttpStatus.FOUND, quotesList));
+        List<Quote> quotes = new ArrayList<>();
+        quotes.add(quote);
+        when(quoteRepository.findAll()).thenReturn(quotes);
+        assertEquals(service.getAllQuotes(""), ResponseModel.generateResponse("GetSuccess", HttpStatus.FOUND, quotes));
     }
 
     @Test
-    void getAllQuotesWhenVoid() {
-        List<Quote> quotesList = new ArrayList<>();
-        when(mockRepository.findAll()).thenReturn(quotesList);
-        assertThrows(QuoteException.class, () -> {
-            underTest.getAllQuotes();
+    void getAllQuotesWhenAbsent() {
+        List<Quote> quotes = new ArrayList<>();
+        when(quoteRepository.findAll()).thenReturn(quotes);
+        assertThrows(QuoteException.class, ()->{
+            service.getAllQuotes("");
         });
     }
 
     @Test
-    void addQuoteWhenCorrect() throws QuoteException {
-        assertEquals(underTest.addQuote(quote), ResponseModel.generateResponse("PostSuccess", HttpStatus.CREATED, quote));
+
+    void putQuote() throws QuoteException {
+        when(quoteRepository.existsById(any())).thenReturn(true);
+        when(quoteRepository.findById(any())).thenReturn(Optional.of(quote));
+        assertEquals(service.putQuote(any(),quote), ResponseModel.generateResponse("PutSuccess", HttpStatus.ACCEPTED, quote));
     }
 
     @Test
-    void addQuoteWhenRedundant() {
-        when(mockRepository.existsByQuote(quote.getQuote())).thenReturn(true);
-        assertThrows(QuoteException.class, () -> {
-            underTest.addQuote(quote);
+    void patchQuote() throws QuoteException {
+        when(quoteRepository.existsById(1L)).thenReturn(true);
+        when(quoteRepository.findById(1L)).thenReturn(Optional.of(quote));
+        assertEquals(service.patchQuote(1L,quote), ResponseModel.generateResponse("PatchSuccess", HttpStatus.ACCEPTED, quote));
+    }
+
+    @Test
+    void delQuote() throws QuoteException {
+        when(quoteRepository.existsById(any())).thenReturn(true);
+        assertEquals(service.delQuote(any()), ResponseModel.generateResponse("DeleteSuccess", HttpStatus.ACCEPTED, any()));
+    }
+
+    @Test
+    void getAllQuotesFromAuthor() throws QuoteException {
+        Set<Quote> quoteSet = new HashSet<>();
+        quoteSet.add(quote);
+        when(quoteRepository.findAllByAuthorId(any())).thenReturn(quoteSet);
+        assertEquals(service.getAllQuotesFromAuthor(any()), ResponseModel.generateResponse("GetSuccess", HttpStatus.FOUND, quoteSet));
+    }
+    @Test
+    @Disabled
+    void getAllQuotesFromAuthorWhenEmpty(){
+        Set<Quote> quoteSet = new HashSet<>();
+        when(quoteRepository.findAllByAuthorId(1L)).thenReturn(quoteSet);
+        assertThrows(QuoteException.class, ()->{
+            service.getAllQuotesFromAuthor(1L);
         });
     }
-*/
-/*    @Test(expected = RepositoryException.class)
-    public void testException() throws RepositoryException {
-        ErrorResponse err = new ErrorResponse(ErrorType.EMPTY_REPOSITORY.value(), ErrorType.EMPTY_REPOSITORY.getMessage());
-        ResponseEntity resp =  new ResponseEntity<>(err, HttpStatus.NOT_FOUND);
-        Mockito.when(libraryService.getAllMovies()).thenThrow(RepositoryException.class);
-        Assert.assertEquals(movieController.getAllMovies(), resp);
-    }    *//*
 
     @Test
-    void putQuoteWhenPresent() throws QuoteException {
-        when(mockRepository.existsById(any())).thenReturn(true);
-        doReturn(Optional.of(quote)).when(mockRepository).findById(any());
-        assertEquals(underTest.putQuote(1L ,quote),ResponseModel.generateResponse("PutSuccess", HttpStatus.ACCEPTED, quote));
+    void getRankingsWhenSize() throws QuoteException {
+/*        Author author = new Author(1L,"name", "surname", LocalDate.now(), LocalDate.now(),"Mr.","Worker", "www.site.com");
+        Quote quote = new Quote(1L, "text","Origin", LocalDate.now(), author);*/
+        List<Quote> quotes = new ArrayList<>();
+        quotes.add(quote);
+        List<String> rquotes = new ArrayList<>();
+        rquotes.add(quotes.get(0).getQuote());
+        when(quoteRepository.findAll()).thenReturn(quotes);
+        assertEquals(service.getRankings("size"), ResponseModel.generateResponse("Get Success", HttpStatus.FOUND, rquotes));
     }
 
     @Test
-    @Disabled
-    void patchQuote() {
+    void getRankingsWhenBirthday() throws QuoteException {
+        Set<Quote> quotes = new HashSet<>();
+        List<Quote> quoteList = new ArrayList<>();
+        List<Author> ranked = new ArrayList<>();
+        quotes.add(quote);
+        quoteList.add(quote);
+        author.setQuotes(quotes);
+        ranked.add(author);
+        when(quoteRepository.findAll()).thenReturn(quoteList);
+        when(authorRepository.findAll()).thenReturn(ranked);
+        assertEquals(service.getRankings("birthday"), ResponseModel.generateResponse("ranked by month", HttpStatus.ACCEPTED, ranked));
     }
 
     @Test
-    @Disabled
-    void delQuote() {
+    void getRankingsWhenDefault() {
+        assertThrows(QuoteException.class, ()->{
+            service.getRankings("");
+        });
     }
-
-    @Test
-    @Disabled
-    void getAllQuotesFromAuthor() {
-    }
-}*/
+}

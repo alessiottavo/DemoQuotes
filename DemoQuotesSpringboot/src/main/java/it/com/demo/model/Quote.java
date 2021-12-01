@@ -1,18 +1,19 @@
 package it.com.demo.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
-
+import lombok.*;
+import org.hibernate.Hibernate;
 
 import javax.persistence.*;
-import java.util.Date;
+import java.time.LocalDate;
+import java.util.Objects;
 
 @JsonIgnoreProperties({"hibernateLazyInitializer"})
 @Entity
-@Data
-@NoArgsConstructor
+@Getter
+@Setter
+@ToString
+@RequiredArgsConstructor
 @Table(name = "Quote")
 public class Quote {
 
@@ -21,12 +22,13 @@ public class Quote {
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "quote_sequence")
     private Long quoteId;
 
-    @Column(nullable = false)
+    @Column(nullable = false,
+            columnDefinition = "LONGTEXT")
     private String quote;
     @Column
     private String origin;
     @Column(name = "date_of_quote")
-    private Date dateOfQuote;
+    private LocalDate dateOfQuote;
 
     @JoinColumn(
             name = "author_id",
@@ -41,8 +43,23 @@ public class Quote {
         this.quoteId = id;
     }
 
-/*    public Quote(String quote, Author author) {
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || Hibernate.getClass(this) != Hibernate.getClass(o)) return false;
+        Quote quote = (Quote) o;
+        return quoteId != null && Objects.equals(quoteId, quote.quoteId);
+    }
+
+    @Override
+    public int hashCode() {
+        return getClass().hashCode();
+    }
+    public Quote(Long quoteId, String quote, String origin, LocalDate dateOfQuote, Author author) {
+        this.quoteId = quoteId;
         this.quote = quote;
+        this.origin = origin;
+        this.dateOfQuote = dateOfQuote;
         this.author = author;
-    }*/
+    }
 }

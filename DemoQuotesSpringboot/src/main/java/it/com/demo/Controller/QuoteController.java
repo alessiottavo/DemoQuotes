@@ -40,9 +40,19 @@ public class QuoteController {
     @ApiResponses(value = {
             @ApiResponse(code = 200, message = "Get operation sucess", response = QuoteException.class),
             @ApiResponse(code = 101, message = "Empty repository", response = QuoteException.class)})
-    private ResponseEntity<Object> getAllQuotes() throws QuoteException {
+    private ResponseEntity<Object> getAllQuotes(@RequestParam(name = "key", defaultValue = "")String key) throws QuoteException {
         logger.info("Inside GET method");
-        return service.getAllQuotes();
+        return service.getAllQuotes(key);
+    }
+
+    @GetMapping("/rankings")
+    @ApiOperation(value = "getRankings", notes = "returns quotes ranked")
+    @ApiResponses(value = {
+            @ApiResponse(code = 200, message = "Get operation sucess", response = QuoteException.class),
+            @ApiResponse(code = 101, message = "Empty repository", response = QuoteException.class)})
+    private ResponseEntity<Object> getRankings(@RequestParam(name = "key", defaultValue = "")String key) throws QuoteException {
+        logger.info("Inside GET method");
+        return service.getRankings(key);
     }
 
     @GetMapping("/{authorId}")

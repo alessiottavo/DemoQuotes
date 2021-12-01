@@ -38,15 +38,3 @@ public class DemoQuotesSpringbootApplication {
                 "Alessio Ottaviani", "info.licence.url", "http://www.apache.org/licenses/LICENSE-2.0.html");
     }
 }
-/*
-- fix get method to default to all or filter by input @RequestParam
-
-Add Business logic
-
-- add a search function to search quotes by keyword
-- add a function that return all quotes ranked by word count
-- add a function that returns all quotes ranked by date
-- add a function that returns the closest birthday of an Author
-- add a function that ranks authors by age
-
-*/
