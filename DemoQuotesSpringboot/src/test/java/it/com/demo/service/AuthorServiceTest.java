@@ -45,13 +45,13 @@ class AuthorServiceTest {
         List<Author> authorList = new ArrayList<>();
         authorList.add(author);
         when(authorRepository.findAll()).thenReturn(authorList);
-        assertEquals(service.getAllAuthors(), ResponseModel.generateResponse("GetSuccess", HttpStatus.FOUND, authorList));
+        assertEquals(service.getAllAuthors("", ""), ResponseModel.generateResponse("GetSuccess", HttpStatus.FOUND, authorList));
     }
 
     @Test
     void getAllAuthorsWhenEmpty() {
         assertThrows(QuoteException.class, ()->{
-            service.getAllAuthors();
+            service.getAllAuthors("","");
         });
     }
 

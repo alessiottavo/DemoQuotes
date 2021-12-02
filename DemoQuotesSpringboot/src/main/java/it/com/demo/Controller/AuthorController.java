@@ -28,9 +28,9 @@ public class AuthorController {
     @ApiResponses(value = {
             @ApiResponse(code = 200, message = "Get operation sucess", response = QuoteException.class),
             @ApiResponse(code = 101, message = "Empty repository", response = QuoteException.class)})
-    private ResponseEntity<Object> getAllQuotes() throws QuoteException {
+    public ResponseEntity<Object> getAllAuthors(@RequestParam(name = "name", defaultValue = "")String name,@RequestParam(name = "surname", defaultValue = "")String surname ) throws QuoteException {
         logger.info("Inside GET method");
-        return service.getAllAuthors();
+        return service.getAllAuthors(name, surname);
 
     }
 
@@ -39,7 +39,7 @@ public class AuthorController {
     @ApiResponses(value = {
             @ApiResponse(code = 201, message = "Patch Operation success", response = QuoteException.class),
             @ApiResponse(code = 103, message = "Author not given correctly", response = QuoteException.class)})
-    private ResponseEntity<Object> patchAuthor(@PathVariable("id") Long authorId, @RequestBody Author author) throws QuoteException {
+    public ResponseEntity<Object> patchAuthor(@PathVariable("id") Long authorId, @RequestBody Author author) throws QuoteException {
         logger.info("Inside PATCH method");
         return service.patchAuthor(authorId, author);
     }

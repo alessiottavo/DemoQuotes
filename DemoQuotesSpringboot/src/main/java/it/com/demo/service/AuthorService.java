@@ -3,6 +3,7 @@ package it.com.demo.service;
 import it.com.demo.exception.QuoteException;
 import it.com.demo.model.Author;
 import it.com.demo.model.ErrorCodes;
+import it.com.demo.model.Quote;
 import it.com.demo.model.ResponseModel;
 import it.com.demo.repository.AuthorRepository;
 import org.apache.logging.log4j.LogManager;
@@ -11,6 +12,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
+
+import java.util.List;
+import java.util.stream.Collectors;
 
 @Service
 public class AuthorService {
@@ -25,10 +29,11 @@ public class AuthorService {
      *
      * @throws QuoteException
      */
-    public ResponseEntity<Object> getAllAuthors() throws QuoteException {
-        if (repository.findAll().isEmpty()) throw new QuoteException(ErrorCodes.QUOTE_NOT_FOUND);
+    public ResponseEntity<Object> getAllAuthors(String name, String surname) throws QuoteException {
+        List<Author> authorsMatch = repository.findAll().stream().filter(q -> q.getName().contains(name)).filter(q -> q.getSurname().contains(surname)).collect(Collectors.toList());
+        if (authorsMatch.isEmpty()) throw new QuoteException(ErrorCodes.QUOTE_NOT_FOUND);
         logger.info("GET method retured");
-        return ResponseModel.generateResponse("GetSuccess", HttpStatus.FOUND, repository.findAll());
+        return ResponseModel.generateResponse("GetSuccess", HttpStatus.FOUND, authorsMatch);
     }
 
     /**

@@ -1957,3 +1957,559 @@ Mocking methods declared on non-public parent classes is not supported.
 2021-12-02 12:39:31,511 [SpringApplicationShutdownHook] INFO  org.hib.too.sch.int.SchemaDropperImpl$DelayedDropActionImpl - HHH000477: Starting delayed evictData of schema as part of SessionFactory shut-down' 
 2021-12-02 12:39:31,527 [SpringApplicationShutdownHook] INFO  com.zax.hik.HikariDataSource                       - HikariPool-1 - Shutdown initiated... 
 2021-12-02 12:39:31,534 [SpringApplicationShutdownHook] INFO  com.zax.hik.HikariDataSource                       - HikariPool-1 - Shutdown completed. 
+2021-12-02 14:12:58,087 [main] INFO  org.spr.boo.tes.con.SpringBootTestContextBootstrapper - Neither @ContextConfiguration nor @ContextHierarchy found for test class [it.com.demo.Controller.AuthorControllerTest], using SpringBootContextLoader 
+2021-12-02 14:12:58,095 [main] INFO  org.spr.tes.con.sup.AbstractContextLoader          - Could not detect default resource locations for test class [it.com.demo.Controller.AuthorControllerTest]: no resource found for suffixes {-context.xml, Context.groovy}. 
+2021-12-02 14:12:58,096 [main] INFO  org.spr.tes.con.sup.AnnotationConfigContextLoaderUtils - Could not detect default configuration classes for test class [it.com.demo.Controller.AuthorControllerTest]: AuthorControllerTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration. 
+2021-12-02 14:12:58,216 [main] INFO  org.spr.boo.tes.con.SpringBootTestContextBootstrapper - Found @SpringBootConfiguration it.com.demo.DemoQuotesSpringbootApplication for test class it.com.demo.Controller.AuthorControllerTest 
+2021-12-02 14:12:58,279 [main] INFO  org.spr.boo.tes.con.SpringBootTestContextBootstrapper - Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener, org.springframework.boot.test.autoconfigure.webservices.client.MockWebServiceServerTestExecutionListener, org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.event.ApplicationEventsTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener, org.springframework.test.context.event.EventPublishingTestExecutionListener] 
+2021-12-02 14:12:58,292 [main] INFO  org.spr.boo.tes.con.SpringBootTestContextBootstrapper - Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@6fe46b62, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@591fd34d, org.springframework.test.context.event.ApplicationEventsTestExecutionListener@61e45f87, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener@7c9b78e3, org.springframework.boot.test.autoconfigure.SpringBootDependencyInjectionTestExecutionListener@3068b369, org.springframework.test.context.support.DirtiesContextTestExecutionListener@17ca8b92, org.springframework.test.context.transaction.TransactionalTestExecutionListener@5491f68b, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@736ac09a, org.springframework.test.context.event.EventPublishingTestExecutionListener@6ecd665, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener@45394b31, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener@1ec7d8b3, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener@3b0ca5e1, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener@5bb3131b, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener@54dcbb9f, org.springframework.boot.test.autoconfigure.webservices.client.MockWebServiceServerTestExecutionListener@74fef3f7] 
+2021-12-02 14:12:58,487 [main] INFO  it.com.dem.Con.AuthorControllerTest                - Starting AuthorControllerTest using Java 11.0.13 on SPXMIW6214 with PID 6552 (started by alessio.ottaviani in C:\Users\alessio.ottaviani\eclipse-workspace\DemoRestMassime\DemoQuotesSpringboot) 
+2021-12-02 14:12:58,491 [main] INFO  it.com.dem.Con.AuthorControllerTest                - No active profile set, falling back to default profiles: default 
+2021-12-02 14:12:59,360 [main] INFO  org.spr.dat.rep.con.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode. 
+2021-12-02 14:12:59,410 [main] INFO  org.spr.dat.rep.con.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 43 ms. Found 2 JPA repository interfaces. 
+2021-12-02 14:13:00,410 [main] INFO  com.zax.hik.HikariDataSource                       - HikariPool-1 - Starting... 
+2021-12-02 14:13:00,595 [main] INFO  com.zax.hik.HikariDataSource                       - HikariPool-1 - Start completed. 
+2021-12-02 14:13:00,674 [main] INFO  org.hib.jpa.int.uti.LogHelper                      - HHH000204: Processing PersistenceUnitInfo [name: default] 
+2021-12-02 14:13:00,745 [main] INFO  org.hib.Version                                    - HHH000412: Hibernate ORM core version 5.4.32.Final 
+2021-12-02 14:13:00,791 [main] INFO  org.hib.ann.com.Version                            - HCANN000001: Hibernate Commons Annotations {5.1.2.Final} 
+2021-12-02 14:13:00,941 [main] INFO  org.hib.dia.Dialect                                - HHH000400: Using dialect: org.hibernate.dialect.H2Dialect 
+2021-12-02 14:13:01,392 [main] INFO  org.hib.eng.tra.jta.pla.int.JtaPlatformInitiator   - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform] 
+2021-12-02 14:13:01,399 [main] INFO  org.spr.orm.jpa.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default' 
+2021-12-02 14:13:02,183 [main] WARN  org.spr.boo.aut.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning 
+2021-12-02 14:13:03,199 [main] INFO  it.com.dem.Con.AuthorControllerTest                - Started AuthorControllerTest in 4.877 seconds (JVM running for 6.355) 
+2021-12-02 14:13:03,258 [main] INFO  it.com.dem.Con.AuthorController                    - Inside GET method 
+2021-12-02 14:13:03,288 [SpringApplicationShutdownHook] INFO  org.spr.orm.jpa.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default' 
+2021-12-02 14:13:03,288 [SpringApplicationShutdownHook] INFO  org.hib.too.sch.int.SchemaDropperImpl$DelayedDropActionImpl - HHH000477: Starting delayed evictData of schema as part of SessionFactory shut-down' 
+2021-12-02 14:13:03,301 [SpringApplicationShutdownHook] INFO  com.zax.hik.HikariDataSource                       - HikariPool-1 - Shutdown initiated... 
+2021-12-02 14:13:03,303 [SpringApplicationShutdownHook] INFO  com.zax.hik.HikariDataSource                       - HikariPool-1 - Shutdown completed. 
+2021-12-02 14:14:35,053 [main] INFO  org.spr.boo.tes.con.SpringBootTestContextBootstrapper - Neither @ContextConfiguration nor @ContextHierarchy found for test class [it.com.demo.Controller.AuthorControllerTest], using SpringBootContextLoader 
+2021-12-02 14:14:35,060 [main] INFO  org.spr.tes.con.sup.AbstractContextLoader          - Could not detect default resource locations for test class [it.com.demo.Controller.AuthorControllerTest]: no resource found for suffixes {-context.xml, Context.groovy}. 
+2021-12-02 14:14:35,061 [main] INFO  org.spr.tes.con.sup.AnnotationConfigContextLoaderUtils - Could not detect default configuration classes for test class [it.com.demo.Controller.AuthorControllerTest]: AuthorControllerTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration. 
+2021-12-02 14:14:35,183 [main] INFO  org.spr.boo.tes.con.SpringBootTestContextBootstrapper - Found @SpringBootConfiguration it.com.demo.DemoQuotesSpringbootApplication for test class it.com.demo.Controller.AuthorControllerTest 
+2021-12-02 14:14:35,252 [main] INFO  org.spr.boo.tes.con.SpringBootTestContextBootstrapper - Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener, org.springframework.boot.test.autoconfigure.webservices.client.MockWebServiceServerTestExecutionListener, org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.event.ApplicationEventsTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener, org.springframework.test.context.event.EventPublishingTestExecutionListener] 
+2021-12-02 14:14:35,265 [main] INFO  org.spr.boo.tes.con.SpringBootTestContextBootstrapper - Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@45394b31, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@1ec7d8b3, org.springframework.test.context.event.ApplicationEventsTestExecutionListener@3b0ca5e1, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener@5bb3131b, org.springframework.boot.test.autoconfigure.SpringBootDependencyInjectionTestExecutionListener@54dcbb9f, org.springframework.test.context.support.DirtiesContextTestExecutionListener@74fef3f7, org.springframework.test.context.transaction.TransactionalTestExecutionListener@2a037324, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@69eb86b4, org.springframework.test.context.event.EventPublishingTestExecutionListener@585ac855, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener@5bb8f9e2, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener@6a933be2, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener@5f78de22, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener@516ebdf8, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener@4d8539de, org.springframework.boot.test.autoconfigure.webservices.client.MockWebServiceServerTestExecutionListener@3eba57a7] 
+2021-12-02 14:14:35,455 [main] INFO  it.com.dem.Con.AuthorControllerTest                - Starting AuthorControllerTest using Java 11.0.13 on SPXMIW6214 with PID 8472 (started by alessio.ottaviani in C:\Users\alessio.ottaviani\eclipse-workspace\DemoRestMassime\DemoQuotesSpringboot) 
+2021-12-02 14:14:35,458 [main] INFO  it.com.dem.Con.AuthorControllerTest                - No active profile set, falling back to default profiles: default 
+2021-12-02 14:14:36,280 [main] INFO  org.spr.dat.rep.con.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode. 
+2021-12-02 14:14:36,337 [main] INFO  org.spr.dat.rep.con.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 48 ms. Found 2 JPA repository interfaces. 
+2021-12-02 14:14:37,259 [main] INFO  com.zax.hik.HikariDataSource                       - HikariPool-1 - Starting... 
+2021-12-02 14:14:37,440 [main] INFO  com.zax.hik.HikariDataSource                       - HikariPool-1 - Start completed. 
+2021-12-02 14:14:37,514 [main] INFO  org.hib.jpa.int.uti.LogHelper                      - HHH000204: Processing PersistenceUnitInfo [name: default] 
+2021-12-02 14:14:37,581 [main] INFO  org.hib.Version                                    - HHH000412: Hibernate ORM core version 5.4.32.Final 
+2021-12-02 14:14:37,623 [main] INFO  org.hib.ann.com.Version                            - HCANN000001: Hibernate Commons Annotations {5.1.2.Final} 
+2021-12-02 14:14:37,764 [main] INFO  org.hib.dia.Dialect                                - HHH000400: Using dialect: org.hibernate.dialect.H2Dialect 
+2021-12-02 14:14:38,318 [main] INFO  org.hib.eng.tra.jta.pla.int.JtaPlatformInitiator   - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform] 
+2021-12-02 14:14:38,326 [main] INFO  org.spr.orm.jpa.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default' 
+2021-12-02 14:14:39,101 [main] WARN  org.spr.boo.aut.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning 
+2021-12-02 14:14:40,157 [main] INFO  it.com.dem.Con.AuthorControllerTest                - Started AuthorControllerTest in 4.863 seconds (JVM running for 6.164) 
+2021-12-02 14:14:40,202 [main] INFO  it.com.dem.Con.AuthorController                    - Inside GET method 
+2021-12-02 14:14:40,227 [SpringApplicationShutdownHook] INFO  org.spr.orm.jpa.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default' 
+2021-12-02 14:14:40,227 [SpringApplicationShutdownHook] INFO  org.hib.too.sch.int.SchemaDropperImpl$DelayedDropActionImpl - HHH000477: Starting delayed evictData of schema as part of SessionFactory shut-down' 
+2021-12-02 14:14:40,236 [SpringApplicationShutdownHook] INFO  com.zax.hik.HikariDataSource                       - HikariPool-1 - Shutdown initiated... 
+2021-12-02 14:14:40,239 [SpringApplicationShutdownHook] INFO  com.zax.hik.HikariDataSource                       - HikariPool-1 - Shutdown completed. 
+2021-12-02 16:10:42,956 [main] INFO  it.com.dem.DemoQuotesSpringbootApplication         - Starting DemoQuotesSpringbootApplication using Java 11.0.13 on SPXMIW6214 with PID 15536 (C:\Users\alessio.ottaviani\eclipse-workspace\DemoRestMassime\DemoQuotesSpringboot\target\classes started by alessio.ottaviani in C:\Users\alessio.ottaviani\eclipse-workspace\DemoRestMassime\DemoQuotesSpringboot) 
+2021-12-02 16:10:42,956 [main] INFO  it.com.dem.DemoQuotesSpringbootApplication         - No active profile set, falling back to default profiles: default 
+2021-12-02 16:10:43,542 [main] INFO  org.spr.dat.rep.con.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode. 
+2021-12-02 16:10:43,573 [main] INFO  org.spr.dat.rep.con.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 34 ms. Found 2 JPA repository interfaces. 
+2021-12-02 16:10:43,889 [main] INFO  org.spr.boo.web.emb.tom.TomcatWebServer            - Tomcat initialized with port(s): 8080 (http) 
+2021-12-02 16:10:43,889 [main] INFO  org.apa.coy.htt.Http11NioProtocol                  - Initializing ProtocolHandler ["http-nio-8080"] 
+2021-12-02 16:10:43,889 [main] INFO  org.apa.cat.cor.StandardService                    - Starting service [Tomcat] 
+2021-12-02 16:10:43,889 [main] INFO  org.apa.cat.cor.StandardEngine                     - Starting Servlet engine: [Apache Tomcat/9.0.54] 
+2021-12-02 16:10:43,958 [main] INFO  org.apa.cat.cor.Con.[To.[lo.[/]                    - Initializing Spring embedded WebApplicationContext 
+2021-12-02 16:10:43,958 [main] INFO  org.spr.boo.web.ser.con.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 986 ms 
+2021-12-02 16:10:44,059 [main] INFO  org.hib.jpa.int.uti.LogHelper                      - HHH000204: Processing PersistenceUnitInfo [name: default] 
+2021-12-02 16:10:44,090 [main] INFO  org.hib.Version                                    - HHH000412: Hibernate ORM core version 5.4.32.Final 
+2021-12-02 16:10:44,159 [main] INFO  org.hib.ann.com.Version                            - HCANN000001: Hibernate Commons Annotations {5.1.2.Final} 
+2021-12-02 16:10:44,221 [main] INFO  com.zax.hik.HikariDataSource                       - HikariPool-1 - Starting... 
+2021-12-02 16:10:44,406 [main] INFO  com.zax.hik.HikariDataSource                       - HikariPool-1 - Start completed. 
+2021-12-02 16:10:44,422 [main] INFO  org.hib.dia.Dialect                                - HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect 
+2021-12-02 16:10:44,861 [main] INFO  org.hib.eng.tra.jta.pla.int.JtaPlatformInitiator   - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform] 
+2021-12-02 16:10:44,861 [main] INFO  org.spr.orm.jpa.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default' 
+2021-12-02 16:10:45,208 [main] WARN  org.spr.boo.aut.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning 
+2021-12-02 16:10:45,424 [main] INFO  org.apa.coy.htt.Http11NioProtocol                  - Starting ProtocolHandler ["http-nio-8080"] 
+2021-12-02 16:10:45,440 [main] INFO  org.spr.boo.web.emb.tom.TomcatWebServer            - Tomcat started on port(s): 8080 (http) with context path '' 
+2021-12-02 16:10:45,593 [main] INFO  it.com.dem.DemoQuotesSpringbootApplication         - Started DemoQuotesSpringbootApplication in 2.874 seconds (JVM running for 3.77) 
+2021-12-02 16:11:20,773 [http-nio-8080-exec-2] INFO  org.apa.cat.cor.Con.[To.[lo.[/]                    - Initializing Spring DispatcherServlet 'dispatcherServlet' 
+2021-12-02 16:11:20,773 [http-nio-8080-exec-2] INFO  org.spr.web.ser.DispatcherServlet                  - Initializing Servlet 'dispatcherServlet' 
+2021-12-02 16:11:20,774 [http-nio-8080-exec-2] INFO  org.spr.web.ser.DispatcherServlet                  - Completed initialization in 1 ms 
+2021-12-02 16:11:20,794 [http-nio-8080-exec-2] INFO  it.com.dem.Con.AuthorController                    - Inside GET method 
+2021-12-02 16:11:20,884 [http-nio-8080-exec-2] INFO  it.com.dem.ser.AuthorService                       - GET method retured 
+2021-12-02 16:12:07,945 [SpringApplicationShutdownHook] INFO  org.spr.orm.jpa.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default' 
+2021-12-02 16:12:07,945 [SpringApplicationShutdownHook] INFO  com.zax.hik.HikariDataSource                       - HikariPool-1 - Shutdown initiated... 
+2021-12-02 16:12:07,960 [SpringApplicationShutdownHook] INFO  com.zax.hik.HikariDataSource                       - HikariPool-1 - Shutdown completed. 
+2021-12-02 16:12:13,317 [main] INFO  it.com.dem.DemoQuotesSpringbootApplication         - Starting DemoQuotesSpringbootApplication using Java 11.0.13 on SPXMIW6214 with PID 12284 (C:\Users\alessio.ottaviani\eclipse-workspace\DemoRestMassime\DemoQuotesSpringboot\target\classes started by alessio.ottaviani in C:\Users\alessio.ottaviani\eclipse-workspace\DemoRestMassime\DemoQuotesSpringboot) 
+2021-12-02 16:12:13,317 [main] INFO  it.com.dem.DemoQuotesSpringbootApplication         - No active profile set, falling back to default profiles: default 
+2021-12-02 16:12:13,863 [main] INFO  org.spr.dat.rep.con.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode. 
+2021-12-02 16:12:13,901 [main] INFO  org.spr.dat.rep.con.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 31 ms. Found 2 JPA repository interfaces. 
+2021-12-02 16:12:14,186 [main] INFO  org.spr.boo.web.emb.tom.TomcatWebServer            - Tomcat initialized with port(s): 8080 (http) 
+2021-12-02 16:12:14,202 [main] INFO  org.apa.coy.htt.Http11NioProtocol                  - Initializing ProtocolHandler ["http-nio-8080"] 
+2021-12-02 16:12:14,202 [main] INFO  org.apa.cat.cor.StandardService                    - Starting service [Tomcat] 
+2021-12-02 16:12:14,202 [main] INFO  org.apa.cat.cor.StandardEngine                     - Starting Servlet engine: [Apache Tomcat/9.0.54] 
+2021-12-02 16:12:14,264 [main] INFO  org.apa.cat.cor.Con.[To.[lo.[/]                    - Initializing Spring embedded WebApplicationContext 
+2021-12-02 16:12:14,264 [main] INFO  org.spr.boo.web.ser.con.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 915 ms 
+2021-12-02 16:12:14,349 [main] INFO  org.hib.jpa.int.uti.LogHelper                      - HHH000204: Processing PersistenceUnitInfo [name: default] 
+2021-12-02 16:12:14,380 [main] INFO  org.hib.Version                                    - HHH000412: Hibernate ORM core version 5.4.32.Final 
+2021-12-02 16:12:14,433 [main] INFO  org.hib.ann.com.Version                            - HCANN000001: Hibernate Commons Annotations {5.1.2.Final} 
+2021-12-02 16:12:14,502 [main] INFO  com.zax.hik.HikariDataSource                       - HikariPool-1 - Starting... 
+2021-12-02 16:12:14,687 [main] INFO  com.zax.hik.HikariDataSource                       - HikariPool-1 - Start completed. 
+2021-12-02 16:12:14,703 [main] INFO  org.hib.dia.Dialect                                - HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect 
+2021-12-02 16:12:15,141 [main] INFO  org.hib.eng.tra.jta.pla.int.JtaPlatformInitiator   - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform] 
+2021-12-02 16:12:15,141 [main] INFO  org.spr.orm.jpa.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default' 
+2021-12-02 16:12:15,490 [main] WARN  org.spr.boo.aut.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning 
+2021-12-02 16:12:15,690 [main] INFO  org.apa.coy.htt.Http11NioProtocol                  - Starting ProtocolHandler ["http-nio-8080"] 
+2021-12-02 16:12:15,706 [main] INFO  org.spr.boo.web.emb.tom.TomcatWebServer            - Tomcat started on port(s): 8080 (http) with context path '' 
+2021-12-02 16:12:15,853 [main] INFO  it.com.dem.DemoQuotesSpringbootApplication         - Started DemoQuotesSpringbootApplication in 2.804 seconds (JVM running for 3.74) 
+2021-12-02 16:12:20,173 [http-nio-8080-exec-1] INFO  org.apa.cat.cor.Con.[To.[lo.[/]                    - Initializing Spring DispatcherServlet 'dispatcherServlet' 
+2021-12-02 16:12:20,173 [http-nio-8080-exec-1] INFO  org.spr.web.ser.DispatcherServlet                  - Initializing Servlet 'dispatcherServlet' 
+2021-12-02 16:12:20,174 [http-nio-8080-exec-1] INFO  org.spr.web.ser.DispatcherServlet                  - Completed initialization in 1 ms 
+2021-12-02 16:12:20,196 [http-nio-8080-exec-1] INFO  it.com.dem.Con.AuthorController                    - Inside GET method 
+2021-12-02 16:12:20,289 [http-nio-8080-exec-1] INFO  it.com.dem.ser.AuthorService                       - GET method retured 
+2021-12-02 16:12:27,770 [http-nio-8080-exec-3] INFO  it.com.dem.Con.AuthorController                    - Inside GET method 
+2021-12-02 16:12:27,782 [http-nio-8080-exec-3] ERROR it.com.dem.exc.QuotesExceptionController           - Error thrown 
+2021-12-02 16:13:43,834 [http-nio-8080-exec-6] INFO  it.com.dem.Con.AuthorController                    - Inside GET method 
+2021-12-02 16:13:43,838 [http-nio-8080-exec-6] INFO  it.com.dem.ser.AuthorService                       - GET method retured 
+2021-12-02 16:13:55,881 [http-nio-8080-exec-7] INFO  it.com.dem.Con.AuthorController                    - Inside GET method 
+2021-12-02 16:13:55,887 [http-nio-8080-exec-7] ERROR it.com.dem.exc.QuotesExceptionController           - Error thrown 
+2021-12-02 16:13:59,656 [http-nio-8080-exec-8] INFO  it.com.dem.Con.AuthorController                    - Inside GET method 
+2021-12-02 16:13:59,662 [http-nio-8080-exec-8] ERROR it.com.dem.exc.QuotesExceptionController           - Error thrown 
+2021-12-02 16:14:04,159 [http-nio-8080-exec-9] INFO  it.com.dem.Con.AuthorController                    - Inside GET method 
+2021-12-02 16:14:04,163 [http-nio-8080-exec-9] ERROR it.com.dem.exc.QuotesExceptionController           - Error thrown 
+2021-12-02 16:14:10,067 [http-nio-8080-exec-10] INFO  it.com.dem.Con.AuthorController                    - Inside GET method 
+2021-12-02 16:14:10,071 [http-nio-8080-exec-10] ERROR it.com.dem.exc.QuotesExceptionController           - Error thrown 
+2021-12-02 16:14:13,623 [http-nio-8080-exec-2] INFO  it.com.dem.Con.AuthorController                    - Inside GET method 
+2021-12-02 16:14:13,627 [http-nio-8080-exec-2] ERROR it.com.dem.exc.QuotesExceptionController           - Error thrown 
+2021-12-02 16:14:16,345 [http-nio-8080-exec-1] INFO  it.com.dem.Con.AuthorController                    - Inside GET method 
+2021-12-02 16:14:16,350 [http-nio-8080-exec-1] INFO  it.com.dem.ser.AuthorService                       - GET method retured 
+2021-12-02 16:14:48,544 [SpringApplicationShutdownHook] INFO  org.spr.orm.jpa.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default' 
+2021-12-02 16:14:48,544 [SpringApplicationShutdownHook] INFO  com.zax.hik.HikariDataSource                       - HikariPool-1 - Shutdown initiated... 
+2021-12-02 16:14:48,560 [SpringApplicationShutdownHook] INFO  com.zax.hik.HikariDataSource                       - HikariPool-1 - Shutdown completed. 
+2021-12-02 16:14:53,623 [main] INFO  it.com.dem.DemoQuotesSpringbootApplication         - Starting DemoQuotesSpringbootApplication using Java 11.0.13 on SPXMIW6214 with PID 6204 (C:\Users\alessio.ottaviani\eclipse-workspace\DemoRestMassime\DemoQuotesSpringboot\target\classes started by alessio.ottaviani in C:\Users\alessio.ottaviani\eclipse-workspace\DemoRestMassime\DemoQuotesSpringboot) 
+2021-12-02 16:14:53,627 [main] INFO  it.com.dem.DemoQuotesSpringbootApplication         - No active profile set, falling back to default profiles: default 
+2021-12-02 16:14:54,211 [main] INFO  org.spr.dat.rep.con.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode. 
+2021-12-02 16:14:54,247 [main] INFO  org.spr.dat.rep.con.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 30 ms. Found 2 JPA repository interfaces. 
+2021-12-02 16:14:54,539 [main] INFO  org.spr.boo.web.emb.tom.TomcatWebServer            - Tomcat initialized with port(s): 8080 (http) 
+2021-12-02 16:14:54,545 [main] INFO  org.apa.coy.htt.Http11NioProtocol                  - Initializing ProtocolHandler ["http-nio-8080"] 
+2021-12-02 16:14:54,546 [main] INFO  org.apa.cat.cor.StandardService                    - Starting service [Tomcat] 
+2021-12-02 16:14:54,546 [main] INFO  org.apa.cat.cor.StandardEngine                     - Starting Servlet engine: [Apache Tomcat/9.0.54] 
+2021-12-02 16:14:54,614 [main] INFO  org.apa.cat.cor.Con.[To.[lo.[/]                    - Initializing Spring embedded WebApplicationContext 
+2021-12-02 16:14:54,614 [main] INFO  org.spr.boo.web.ser.con.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 961 ms 
+2021-12-02 16:14:54,698 [main] INFO  org.hib.jpa.int.uti.LogHelper                      - HHH000204: Processing PersistenceUnitInfo [name: default] 
+2021-12-02 16:14:54,714 [main] INFO  org.hib.Version                                    - HHH000412: Hibernate ORM core version 5.4.32.Final 
+2021-12-02 16:14:54,783 [main] INFO  org.hib.ann.com.Version                            - HCANN000001: Hibernate Commons Annotations {5.1.2.Final} 
+2021-12-02 16:14:54,855 [main] INFO  com.zax.hik.HikariDataSource                       - HikariPool-1 - Starting... 
+2021-12-02 16:14:55,064 [main] INFO  com.zax.hik.HikariDataSource                       - HikariPool-1 - Start completed. 
+2021-12-02 16:14:55,077 [main] INFO  org.hib.dia.Dialect                                - HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect 
+2021-12-02 16:14:55,527 [main] INFO  org.hib.eng.tra.jta.pla.int.JtaPlatformInitiator   - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform] 
+2021-12-02 16:14:55,534 [main] INFO  org.spr.orm.jpa.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default' 
+2021-12-02 16:14:55,880 [main] WARN  org.spr.boo.aut.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning 
+2021-12-02 16:14:56,087 [main] INFO  org.apa.coy.htt.Http11NioProtocol                  - Starting ProtocolHandler ["http-nio-8080"] 
+2021-12-02 16:14:56,103 [main] INFO  org.spr.boo.web.emb.tom.TomcatWebServer            - Tomcat started on port(s): 8080 (http) with context path '' 
+2021-12-02 16:14:56,256 [main] INFO  it.com.dem.DemoQuotesSpringbootApplication         - Started DemoQuotesSpringbootApplication in 2.885 seconds (JVM running for 3.794) 
+2021-12-02 16:14:57,759 [http-nio-8080-exec-2] INFO  org.apa.cat.cor.Con.[To.[lo.[/]                    - Initializing Spring DispatcherServlet 'dispatcherServlet' 
+2021-12-02 16:14:57,759 [http-nio-8080-exec-2] INFO  org.spr.web.ser.DispatcherServlet                  - Initializing Servlet 'dispatcherServlet' 
+2021-12-02 16:14:57,760 [http-nio-8080-exec-2] INFO  org.spr.web.ser.DispatcherServlet                  - Completed initialization in 1 ms 
+2021-12-02 16:14:57,780 [http-nio-8080-exec-2] INFO  it.com.dem.Con.AuthorController                    - Inside GET method 
+2021-12-02 16:14:57,874 [http-nio-8080-exec-2] INFO  it.com.dem.ser.AuthorService                       - GET method retured 
+2021-12-02 16:15:20,635 [SpringApplicationShutdownHook] INFO  org.spr.orm.jpa.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default' 
+2021-12-02 16:15:20,635 [SpringApplicationShutdownHook] INFO  com.zax.hik.HikariDataSource                       - HikariPool-1 - Shutdown initiated... 
+2021-12-02 16:15:20,650 [SpringApplicationShutdownHook] INFO  com.zax.hik.HikariDataSource                       - HikariPool-1 - Shutdown completed. 
+2021-12-02 16:15:25,294 [main] INFO  it.com.dem.DemoQuotesSpringbootApplication         - Starting DemoQuotesSpringbootApplication using Java 11.0.13 on SPXMIW6214 with PID 20520 (C:\Users\alessio.ottaviani\eclipse-workspace\DemoRestMassime\DemoQuotesSpringboot\target\classes started by alessio.ottaviani in C:\Users\alessio.ottaviani\eclipse-workspace\DemoRestMassime\DemoQuotesSpringboot) 
+2021-12-02 16:15:25,294 [main] INFO  it.com.dem.DemoQuotesSpringbootApplication         - No active profile set, falling back to default profiles: default 
+2021-12-02 16:15:25,830 [main] INFO  org.spr.dat.rep.con.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode. 
+2021-12-02 16:15:25,862 [main] INFO  org.spr.dat.rep.con.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 30 ms. Found 2 JPA repository interfaces. 
+2021-12-02 16:15:26,147 [main] INFO  org.spr.boo.web.emb.tom.TomcatWebServer            - Tomcat initialized with port(s): 8080 (http) 
+2021-12-02 16:15:26,163 [main] INFO  org.apa.coy.htt.Http11NioProtocol                  - Initializing ProtocolHandler ["http-nio-8080"] 
+2021-12-02 16:15:26,163 [main] INFO  org.apa.cat.cor.StandardService                    - Starting service [Tomcat] 
+2021-12-02 16:15:26,163 [main] INFO  org.apa.cat.cor.StandardEngine                     - Starting Servlet engine: [Apache Tomcat/9.0.54] 
+2021-12-02 16:15:26,278 [main] INFO  org.apa.cat.cor.Con.[To.[lo.[/]                    - Initializing Spring embedded WebApplicationContext 
+2021-12-02 16:15:26,278 [main] INFO  org.spr.boo.web.ser.con.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 953 ms 
+2021-12-02 16:15:26,363 [main] INFO  org.hib.jpa.int.uti.LogHelper                      - HHH000204: Processing PersistenceUnitInfo [name: default] 
+2021-12-02 16:15:26,379 [main] INFO  org.hib.Version                                    - HHH000412: Hibernate ORM core version 5.4.32.Final 
+2021-12-02 16:15:26,448 [main] INFO  org.hib.ann.com.Version                            - HCANN000001: Hibernate Commons Annotations {5.1.2.Final} 
+2021-12-02 16:15:26,510 [main] INFO  com.zax.hik.HikariDataSource                       - HikariPool-1 - Starting... 
+2021-12-02 16:15:26,696 [main] INFO  com.zax.hik.HikariDataSource                       - HikariPool-1 - Start completed. 
+2021-12-02 16:15:26,711 [main] INFO  org.hib.dia.Dialect                                - HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect 
+2021-12-02 16:15:27,112 [main] INFO  org.hib.eng.tra.jta.pla.int.JtaPlatformInitiator   - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform] 
+2021-12-02 16:15:27,112 [main] INFO  org.spr.orm.jpa.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default' 
+2021-12-02 16:15:27,467 [main] WARN  org.spr.boo.aut.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning 
+2021-12-02 16:15:27,667 [main] INFO  org.apa.coy.htt.Http11NioProtocol                  - Starting ProtocolHandler ["http-nio-8080"] 
+2021-12-02 16:15:27,683 [main] INFO  org.spr.boo.web.emb.tom.TomcatWebServer            - Tomcat started on port(s): 8080 (http) with context path '' 
+2021-12-02 16:15:27,836 [main] INFO  it.com.dem.DemoQuotesSpringbootApplication         - Started DemoQuotesSpringbootApplication in 2.769 seconds (JVM running for 3.654) 
+2021-12-02 16:15:29,428 [http-nio-8080-exec-2] INFO  org.apa.cat.cor.Con.[To.[lo.[/]                    - Initializing Spring DispatcherServlet 'dispatcherServlet' 
+2021-12-02 16:15:29,429 [http-nio-8080-exec-2] INFO  org.spr.web.ser.DispatcherServlet                  - Initializing Servlet 'dispatcherServlet' 
+2021-12-02 16:15:29,431 [http-nio-8080-exec-2] INFO  org.spr.web.ser.DispatcherServlet                  - Completed initialization in 2 ms 
+2021-12-02 16:15:29,453 [http-nio-8080-exec-2] INFO  it.com.dem.Con.AuthorController                    - Inside GET method 
+2021-12-02 16:15:29,545 [http-nio-8080-exec-2] INFO  it.com.dem.ser.AuthorService                       - GET method retured 
+2021-12-02 16:15:35,312 [http-nio-8080-exec-3] INFO  it.com.dem.Con.AuthorController                    - Inside GET method 
+2021-12-02 16:15:35,317 [http-nio-8080-exec-3] INFO  it.com.dem.ser.AuthorService                       - GET method retured 
+2021-12-02 16:15:38,576 [http-nio-8080-exec-4] INFO  it.com.dem.Con.AuthorController                    - Inside GET method 
+2021-12-02 16:15:38,583 [http-nio-8080-exec-4] INFO  it.com.dem.ser.AuthorService                       - GET method retured 
+2021-12-02 16:16:48,721 [main] INFO  org.spr.boo.tes.con.SpringBootTestContextBootstrapper - Neither @ContextConfiguration nor @ContextHierarchy found for test class [it.com.demo.service.AuthorServiceTest], using SpringBootContextLoader 
+2021-12-02 16:16:48,737 [main] INFO  org.spr.tes.con.sup.AbstractContextLoader          - Could not detect default resource locations for test class [it.com.demo.service.AuthorServiceTest]: no resource found for suffixes {-context.xml, Context.groovy}. 
+2021-12-02 16:16:48,737 [main] INFO  org.spr.tes.con.sup.AnnotationConfigContextLoaderUtils - Could not detect default configuration classes for test class [it.com.demo.service.AuthorServiceTest]: AuthorServiceTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration. 
+2021-12-02 16:16:48,837 [main] INFO  org.spr.boo.tes.con.SpringBootTestContextBootstrapper - Found @SpringBootConfiguration it.com.demo.DemoQuotesSpringbootApplication for test class it.com.demo.service.AuthorServiceTest 
+2021-12-02 16:16:48,899 [main] INFO  org.spr.boo.tes.con.SpringBootTestContextBootstrapper - Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener, org.springframework.boot.test.autoconfigure.webservices.client.MockWebServiceServerTestExecutionListener, org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.event.ApplicationEventsTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener, org.springframework.test.context.event.EventPublishingTestExecutionListener] 
+2021-12-02 16:16:48,915 [main] INFO  org.spr.boo.tes.con.SpringBootTestContextBootstrapper - Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@27e32fe4, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@c3c4c1c, org.springframework.test.context.event.ApplicationEventsTestExecutionListener@17d238b1, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener@3d7cc3cb, org.springframework.boot.test.autoconfigure.SpringBootDependencyInjectionTestExecutionListener@35e478f, org.springframework.test.context.support.DirtiesContextTestExecutionListener@6d6cb754, org.springframework.test.context.transaction.TransactionalTestExecutionListener@6b7d1df8, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@3044e9c7, org.springframework.test.context.event.EventPublishingTestExecutionListener@41d7b27f, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener@49096b06, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener@4a183d02, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener@5d05ef57, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener@213deac2, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener@23eee4b8, org.springframework.boot.test.autoconfigure.webservices.client.MockWebServiceServerTestExecutionListener@28952dea] 
+2021-12-02 16:16:49,100 [main] INFO  it.com.dem.ser.AuthorServiceTest                   - Starting AuthorServiceTest using Java 11.0.13 on SPXMIW6214 with PID 15932 (started by alessio.ottaviani in C:\Users\alessio.ottaviani\eclipse-workspace\DemoRestMassime\DemoQuotesSpringboot) 
+2021-12-02 16:16:49,100 [main] INFO  it.com.dem.ser.AuthorServiceTest                   - No active profile set, falling back to default profiles: default 
+2021-12-02 16:16:49,940 [main] INFO  org.spr.dat.rep.con.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode. 
+2021-12-02 16:16:50,002 [main] INFO  org.spr.dat.rep.con.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 52 ms. Found 2 JPA repository interfaces. 
+2021-12-02 16:16:50,957 [main] INFO  com.zax.hik.HikariDataSource                       - HikariPool-1 - Starting... 
+2021-12-02 16:16:51,158 [main] INFO  com.zax.hik.HikariDataSource                       - HikariPool-1 - Start completed. 
+2021-12-02 16:16:51,243 [main] INFO  org.hib.jpa.int.uti.LogHelper                      - HHH000204: Processing PersistenceUnitInfo [name: default] 
+2021-12-02 16:16:51,307 [main] INFO  org.hib.Version                                    - HHH000412: Hibernate ORM core version 5.4.32.Final 
+2021-12-02 16:16:51,359 [main] INFO  org.hib.ann.com.Version                            - HCANN000001: Hibernate Commons Annotations {5.1.2.Final} 
+2021-12-02 16:16:51,506 [main] INFO  org.hib.dia.Dialect                                - HHH000400: Using dialect: org.hibernate.dialect.H2Dialect 
+2021-12-02 16:16:51,960 [main] INFO  org.hib.eng.tra.jta.pla.int.JtaPlatformInitiator   - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform] 
+2021-12-02 16:16:51,976 [main] INFO  org.spr.orm.jpa.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default' 
+2021-12-02 16:16:52,709 [main] WARN  org.spr.boo.aut.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning 
+2021-12-02 16:16:53,734 [main] INFO  it.com.dem.ser.AuthorServiceTest                   - Started AuthorServiceTest in 4.792 seconds (JVM running for 6.108) 
+2021-12-02 16:16:53,781 [main] INFO  it.com.dem.ser.AuthorService                       - GET method retured 
+2021-12-02 16:16:53,812 [SpringApplicationShutdownHook] INFO  org.spr.orm.jpa.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default' 
+2021-12-02 16:16:53,812 [SpringApplicationShutdownHook] INFO  org.hib.too.sch.int.SchemaDropperImpl$DelayedDropActionImpl - HHH000477: Starting delayed evictData of schema as part of SessionFactory shut-down' 
+2021-12-02 16:16:53,812 [SpringApplicationShutdownHook] INFO  com.zax.hik.HikariDataSource                       - HikariPool-1 - Shutdown initiated... 
+2021-12-02 16:16:53,827 [SpringApplicationShutdownHook] INFO  com.zax.hik.HikariDataSource                       - HikariPool-1 - Shutdown completed. 
+2021-12-02 16:17:12,754 [main] INFO  org.spr.boo.tes.con.SpringBootTestContextBootstrapper - Neither @ContextConfiguration nor @ContextHierarchy found for test class [it.com.demo.service.AuthorServiceTest], using SpringBootContextLoader 
+2021-12-02 16:17:12,754 [main] INFO  org.spr.tes.con.sup.AbstractContextLoader          - Could not detect default resource locations for test class [it.com.demo.service.AuthorServiceTest]: no resource found for suffixes {-context.xml, Context.groovy}. 
+2021-12-02 16:17:12,754 [main] INFO  org.spr.tes.con.sup.AnnotationConfigContextLoaderUtils - Could not detect default configuration classes for test class [it.com.demo.service.AuthorServiceTest]: AuthorServiceTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration. 
+2021-12-02 16:17:12,854 [main] INFO  org.spr.boo.tes.con.SpringBootTestContextBootstrapper - Found @SpringBootConfiguration it.com.demo.DemoQuotesSpringbootApplication for test class it.com.demo.service.AuthorServiceTest 
+2021-12-02 16:17:12,923 [main] INFO  org.spr.boo.tes.con.SpringBootTestContextBootstrapper - Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener, org.springframework.boot.test.autoconfigure.webservices.client.MockWebServiceServerTestExecutionListener, org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.event.ApplicationEventsTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener, org.springframework.test.context.event.EventPublishingTestExecutionListener] 
+2021-12-02 16:17:12,923 [main] INFO  org.spr.boo.tes.con.SpringBootTestContextBootstrapper - Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@3d7cc3cb, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@35e478f, org.springframework.test.context.event.ApplicationEventsTestExecutionListener@6d6cb754, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener@6b7d1df8, org.springframework.boot.test.autoconfigure.SpringBootDependencyInjectionTestExecutionListener@3044e9c7, org.springframework.test.context.support.DirtiesContextTestExecutionListener@41d7b27f, org.springframework.test.context.transaction.TransactionalTestExecutionListener@49096b06, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@4a183d02, org.springframework.test.context.event.EventPublishingTestExecutionListener@5d05ef57, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener@213deac2, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener@23eee4b8, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener@28952dea, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener@5a9800f8, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener@143d9a93, org.springframework.boot.test.autoconfigure.webservices.client.MockWebServiceServerTestExecutionListener@40226788] 
+2021-12-02 16:17:13,108 [main] INFO  it.com.dem.ser.AuthorServiceTest                   - Starting AuthorServiceTest using Java 11.0.13 on SPXMIW6214 with PID 20696 (started by alessio.ottaviani in C:\Users\alessio.ottaviani\eclipse-workspace\DemoRestMassime\DemoQuotesSpringboot) 
+2021-12-02 16:17:13,124 [main] INFO  it.com.dem.ser.AuthorServiceTest                   - No active profile set, falling back to default profiles: default 
+2021-12-02 16:17:13,957 [main] INFO  org.spr.dat.rep.con.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode. 
+2021-12-02 16:17:14,011 [main] INFO  org.spr.dat.rep.con.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 49 ms. Found 2 JPA repository interfaces. 
+2021-12-02 16:17:14,944 [main] INFO  com.zax.hik.HikariDataSource                       - HikariPool-1 - Starting... 
+2021-12-02 16:17:15,129 [main] INFO  com.zax.hik.HikariDataSource                       - HikariPool-1 - Start completed. 
+2021-12-02 16:17:15,214 [main] INFO  org.hib.jpa.int.uti.LogHelper                      - HHH000204: Processing PersistenceUnitInfo [name: default] 
+2021-12-02 16:17:15,276 [main] INFO  org.hib.Version                                    - HHH000412: Hibernate ORM core version 5.4.32.Final 
+2021-12-02 16:17:15,316 [main] INFO  org.hib.ann.com.Version                            - HCANN000001: Hibernate Commons Annotations {5.1.2.Final} 
+2021-12-02 16:17:15,461 [main] INFO  org.hib.dia.Dialect                                - HHH000400: Using dialect: org.hibernate.dialect.H2Dialect 
+2021-12-02 16:17:15,900 [main] INFO  org.hib.eng.tra.jta.pla.int.JtaPlatformInitiator   - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform] 
+2021-12-02 16:17:15,900 [main] INFO  org.spr.orm.jpa.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default' 
+2021-12-02 16:17:16,633 [main] WARN  org.spr.boo.aut.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning 
+2021-12-02 16:17:17,667 [main] INFO  it.com.dem.ser.AuthorServiceTest                   - Started AuthorServiceTest in 4.711 seconds (JVM running for 6.01) 
+2021-12-02 16:17:17,752 [main] INFO  it.com.dem.ser.AuthorService                       - PATCH method retured 
+2021-12-02 16:17:17,767 [main] INFO  it.com.dem.ser.AuthorService                       - PATCH method retured 
+2021-12-02 16:17:17,783 [main] INFO  it.com.dem.ser.AuthorService                       - GET method retured 
+2021-12-02 16:17:17,789 [SpringApplicationShutdownHook] INFO  org.spr.orm.jpa.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default' 
+2021-12-02 16:17:17,789 [SpringApplicationShutdownHook] INFO  org.hib.too.sch.int.SchemaDropperImpl$DelayedDropActionImpl - HHH000477: Starting delayed evictData of schema as part of SessionFactory shut-down' 
+2021-12-02 16:17:17,805 [SpringApplicationShutdownHook] INFO  com.zax.hik.HikariDataSource                       - HikariPool-1 - Shutdown initiated... 
+2021-12-02 16:17:17,805 [SpringApplicationShutdownHook] INFO  com.zax.hik.HikariDataSource                       - HikariPool-1 - Shutdown completed. 
+2021-12-02 16:34:32,620 [SpringApplicationShutdownHook] INFO  org.spr.orm.jpa.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default' 
+2021-12-02 16:34:32,620 [SpringApplicationShutdownHook] INFO  com.zax.hik.HikariDataSource                       - HikariPool-1 - Shutdown initiated... 
+2021-12-02 16:34:32,636 [SpringApplicationShutdownHook] INFO  com.zax.hik.HikariDataSource                       - HikariPool-1 - Shutdown completed. 
+2021-12-02 16:35:13,336 [main] INFO  org.spr.boo.tes.con.SpringBootTestContextBootstrapper - Neither @ContextConfiguration nor @ContextHierarchy found for test class [it.com.demo.service.AuthorServiceTest], using SpringBootContextLoader 
+2021-12-02 16:35:13,352 [main] INFO  org.spr.tes.con.sup.AbstractContextLoader          - Could not detect default resource locations for test class [it.com.demo.service.AuthorServiceTest]: no resource found for suffixes {-context.xml, Context.groovy}. 
+2021-12-02 16:35:13,352 [main] INFO  org.spr.tes.con.sup.AnnotationConfigContextLoaderUtils - Could not detect default configuration classes for test class [it.com.demo.service.AuthorServiceTest]: AuthorServiceTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration. 
+2021-12-02 16:35:13,452 [main] INFO  org.spr.boo.tes.con.SpringBootTestContextBootstrapper - Found @SpringBootConfiguration it.com.demo.DemoQuotesSpringbootApplication for test class it.com.demo.service.AuthorServiceTest 
+2021-12-02 16:35:13,515 [main] INFO  org.spr.boo.tes.con.SpringBootTestContextBootstrapper - Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener, org.springframework.boot.test.autoconfigure.webservices.client.MockWebServiceServerTestExecutionListener, org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.event.ApplicationEventsTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener, org.springframework.test.context.event.EventPublishingTestExecutionListener] 
+2021-12-02 16:35:13,521 [main] INFO  org.spr.boo.tes.con.SpringBootTestContextBootstrapper - Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@3d7cc3cb, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@35e478f, org.springframework.test.context.event.ApplicationEventsTestExecutionListener@6d6cb754, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener@6b7d1df8, org.springframework.boot.test.autoconfigure.SpringBootDependencyInjectionTestExecutionListener@3044e9c7, org.springframework.test.context.support.DirtiesContextTestExecutionListener@41d7b27f, org.springframework.test.context.transaction.TransactionalTestExecutionListener@49096b06, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@4a183d02, org.springframework.test.context.event.EventPublishingTestExecutionListener@5d05ef57, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener@213deac2, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener@23eee4b8, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener@28952dea, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener@5a9800f8, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener@143d9a93, org.springframework.boot.test.autoconfigure.webservices.client.MockWebServiceServerTestExecutionListener@40226788] 
+2021-12-02 16:35:13,715 [main] INFO  it.com.dem.ser.AuthorServiceTest                   - Starting AuthorServiceTest using Java 11.0.13 on SPXMIW6214 with PID 21176 (started by alessio.ottaviani in C:\Users\alessio.ottaviani\eclipse-workspace\DemoRestMassime\DemoQuotesSpringboot) 
+2021-12-02 16:35:13,715 [main] INFO  it.com.dem.ser.AuthorServiceTest                   - No active profile set, falling back to default profiles: default 
+2021-12-02 16:35:14,539 [main] INFO  org.spr.dat.rep.con.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode. 
+2021-12-02 16:35:14,586 [main] INFO  org.spr.dat.rep.con.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 47 ms. Found 2 JPA repository interfaces. 
+2021-12-02 16:35:15,542 [main] INFO  com.zax.hik.HikariDataSource                       - HikariPool-1 - Starting... 
+2021-12-02 16:35:15,758 [main] INFO  com.zax.hik.HikariDataSource                       - HikariPool-1 - Start completed. 
+2021-12-02 16:35:15,843 [main] INFO  org.hib.jpa.int.uti.LogHelper                      - HHH000204: Processing PersistenceUnitInfo [name: default] 
+2021-12-02 16:35:15,905 [main] INFO  org.hib.Version                                    - HHH000412: Hibernate ORM core version 5.4.32.Final 
+2021-12-02 16:35:15,974 [main] INFO  org.hib.ann.com.Version                            - HCANN000001: Hibernate Commons Annotations {5.1.2.Final} 
+2021-12-02 16:35:16,144 [main] INFO  org.hib.dia.Dialect                                - HHH000400: Using dialect: org.hibernate.dialect.H2Dialect 
+2021-12-02 16:35:16,645 [main] INFO  org.hib.eng.tra.jta.pla.int.JtaPlatformInitiator   - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform] 
+2021-12-02 16:35:16,645 [main] INFO  org.spr.orm.jpa.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default' 
+2021-12-02 16:35:17,457 [main] WARN  org.spr.boo.aut.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning 
+2021-12-02 16:35:18,496 [main] INFO  it.com.dem.ser.AuthorServiceTest                   - Started AuthorServiceTest in 4.946 seconds (JVM running for 6.237) 
+2021-12-02 16:35:18,581 [main] INFO  it.com.dem.ser.AuthorService                       - PATCH method retured 
+2021-12-02 16:35:18,596 [main] INFO  it.com.dem.ser.AuthorService                       - PATCH method retured 
+2021-12-02 16:35:18,596 [main] INFO  it.com.dem.ser.AuthorService                       - GET method retured 
+2021-12-02 16:35:18,612 [SpringApplicationShutdownHook] INFO  org.spr.orm.jpa.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default' 
+2021-12-02 16:35:18,612 [SpringApplicationShutdownHook] INFO  org.hib.too.sch.int.SchemaDropperImpl$DelayedDropActionImpl - HHH000477: Starting delayed evictData of schema as part of SessionFactory shut-down' 
+2021-12-02 16:35:18,627 [SpringApplicationShutdownHook] INFO  com.zax.hik.HikariDataSource                       - HikariPool-1 - Shutdown initiated... 
+2021-12-02 16:35:18,634 [SpringApplicationShutdownHook] INFO  com.zax.hik.HikariDataSource                       - HikariPool-1 - Shutdown completed. 
+2021-12-02 16:35:28,215 [main] INFO  it.com.dem.DemoQuotesSpringbootApplication         - Starting DemoQuotesSpringbootApplication using Java 11.0.13 on SPXMIW6214 with PID 21048 (C:\Users\alessio.ottaviani\eclipse-workspace\DemoRestMassime\DemoQuotesSpringboot\target\classes started by alessio.ottaviani in C:\Users\alessio.ottaviani\eclipse-workspace\DemoRestMassime\DemoQuotesSpringboot) 
+2021-12-02 16:35:28,215 [main] INFO  it.com.dem.DemoQuotesSpringbootApplication         - No active profile set, falling back to default profiles: default 
+2021-12-02 16:35:28,769 [main] INFO  org.spr.dat.rep.con.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode. 
+2021-12-02 16:35:28,801 [main] INFO  org.spr.dat.rep.con.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 31 ms. Found 2 JPA repository interfaces. 
+2021-12-02 16:35:29,086 [main] INFO  org.spr.boo.web.emb.tom.TomcatWebServer            - Tomcat initialized with port(s): 8080 (http) 
+2021-12-02 16:35:29,101 [main] INFO  org.apa.coy.htt.Http11NioProtocol                  - Initializing ProtocolHandler ["http-nio-8080"] 
+2021-12-02 16:35:29,101 [main] INFO  org.apa.cat.cor.StandardService                    - Starting service [Tomcat] 
+2021-12-02 16:35:29,101 [main] INFO  org.apa.cat.cor.StandardEngine                     - Starting Servlet engine: [Apache Tomcat/9.0.54] 
+2021-12-02 16:35:29,186 [main] INFO  org.apa.cat.cor.Con.[To.[lo.[/]                    - Initializing Spring embedded WebApplicationContext 
+2021-12-02 16:35:29,186 [main] INFO  org.spr.boo.web.ser.con.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 940 ms 
+2021-12-02 16:35:29,271 [main] INFO  org.hib.jpa.int.uti.LogHelper                      - HHH000204: Processing PersistenceUnitInfo [name: default] 
+2021-12-02 16:35:29,304 [main] INFO  org.hib.Version                                    - HHH000412: Hibernate ORM core version 5.4.32.Final 
+2021-12-02 16:35:29,386 [main] INFO  org.hib.ann.com.Version                            - HCANN000001: Hibernate Commons Annotations {5.1.2.Final} 
+2021-12-02 16:35:29,456 [main] INFO  com.zax.hik.HikariDataSource                       - HikariPool-1 - Starting... 
+2021-12-02 16:35:29,656 [main] INFO  com.zax.hik.HikariDataSource                       - HikariPool-1 - Start completed. 
+2021-12-02 16:35:29,672 [main] INFO  org.hib.dia.Dialect                                - HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect 
+2021-12-02 16:35:30,104 [main] WARN  org.hib.too.sch.int.ExceptionHandlerLoggedImpl     - GenerationTarget encountered exception accepting command : Error executing DDL "
+    alter table author_books 
+       drop 
+       foreign key FKr514ej8rhei197wx3nrvp0qie" via JDBC Statement 
+org.hibernate.tool.schema.spi.CommandAcceptanceException: Error executing DDL "
+    alter table author_books 
+       drop 
+       foreign key FKr514ej8rhei197wx3nrvp0qie" via JDBC Statement
+	at org.hibernate.tool.schema.internal.exec.GenerationTargetToDatabase.accept(GenerationTargetToDatabase.java:67) ~[hibernate-core-5.4.32.Final.jar:5.4.32.Final]
+	at org.hibernate.tool.schema.internal.SchemaDropperImpl.applySqlString(SchemaDropperImpl.java:375) ~[hibernate-core-5.4.32.Final.jar:5.4.32.Final]
+	at org.hibernate.tool.schema.internal.SchemaDropperImpl.applySqlStrings(SchemaDropperImpl.java:359) ~[hibernate-core-5.4.32.Final.jar:5.4.32.Final]
+	at org.hibernate.tool.schema.internal.SchemaDropperImpl.applyConstraintDropping(SchemaDropperImpl.java:331) ~[hibernate-core-5.4.32.Final.jar:5.4.32.Final]
+	at org.hibernate.tool.schema.internal.SchemaDropperImpl.dropFromMetadata(SchemaDropperImpl.java:230) ~[hibernate-core-5.4.32.Final.jar:5.4.32.Final]
+	at org.hibernate.tool.schema.internal.SchemaDropperImpl.performDrop(SchemaDropperImpl.java:154) ~[hibernate-core-5.4.32.Final.jar:5.4.32.Final]
+	at org.hibernate.tool.schema.internal.SchemaDropperImpl.doDrop(SchemaDropperImpl.java:126) ~[hibernate-core-5.4.32.Final.jar:5.4.32.Final]
+	at org.hibernate.tool.schema.internal.SchemaDropperImpl.doDrop(SchemaDropperImpl.java:112) ~[hibernate-core-5.4.32.Final.jar:5.4.32.Final]
+	at org.hibernate.tool.schema.spi.SchemaManagementToolCoordinator.performDatabaseAction(SchemaManagementToolCoordinator.java:145) ~[hibernate-core-5.4.32.Final.jar:5.4.32.Final]
+	at org.hibernate.tool.schema.spi.SchemaManagementToolCoordinator.process(SchemaManagementToolCoordinator.java:73) ~[hibernate-core-5.4.32.Final.jar:5.4.32.Final]
+	at org.hibernate.internal.SessionFactoryImpl.<init>(SessionFactoryImpl.java:318) ~[hibernate-core-5.4.32.Final.jar:5.4.32.Final]
+	at org.hibernate.boot.internal.SessionFactoryBuilderImpl.build(SessionFactoryBuilderImpl.java:468) ~[hibernate-core-5.4.32.Final.jar:5.4.32.Final]
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.build(EntityManagerFactoryBuilderImpl.java:1259) ~[hibernate-core-5.4.32.Final.jar:5.4.32.Final]
+	at org.springframework.orm.jpa.vendor.SpringHibernateJpaPersistenceProvider.createContainerEntityManagerFactory(SpringHibernateJpaPersistenceProvider.java:58) ~[spring-orm-5.3.12.jar:5.3.12]
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.createNativeEntityManagerFactory(LocalContainerEntityManagerFactoryBean.java:365) ~[spring-orm-5.3.12.jar:5.3.12]
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.buildNativeEntityManagerFactory(AbstractEntityManagerFactoryBean.java:409) ~[spring-orm-5.3.12.jar:5.3.12]
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.afterPropertiesSet(AbstractEntityManagerFactoryBean.java:396) ~[spring-orm-5.3.12.jar:5.3.12]
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.afterPropertiesSet(LocalContainerEntityManagerFactoryBean.java:341) ~[spring-orm-5.3.12.jar:5.3.12]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1863) ~[spring-beans-5.3.12.jar:5.3.12]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1800) ~[spring-beans-5.3.12.jar:5.3.12]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:620) ~[spring-beans-5.3.12.jar:5.3.12]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542) ~[spring-beans-5.3.12.jar:5.3.12]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335) ~[spring-beans-5.3.12.jar:5.3.12]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234) [spring-beans-5.3.12.jar:5.3.12]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333) [spring-beans-5.3.12.jar:5.3.12]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208) [spring-beans-5.3.12.jar:5.3.12]
+	at org.springframework.context.support.AbstractApplicationContext.getBean(AbstractApplicationContext.java:1154) [spring-context-5.3.12.jar:5.3.12]
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:908) [spring-context-5.3.12.jar:5.3.12]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:583) [spring-context-5.3.12.jar:5.3.12]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:145) [spring-boot-2.5.6.jar:2.5.6]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:754) [spring-boot-2.5.6.jar:2.5.6]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:434) [spring-boot-2.5.6.jar:2.5.6]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:338) [spring-boot-2.5.6.jar:2.5.6]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1343) [spring-boot-2.5.6.jar:2.5.6]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1332) [spring-boot-2.5.6.jar:2.5.6]
+	at it.com.demo.DemoQuotesSpringbootApplication.main(DemoQuotesSpringbootApplication.java:19) [classes/:?]
+Caused by: java.sql.SQLSyntaxErrorException: Table 'demoquotes.author_books' doesn't exist
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:120) ~[mysql-connector-java-8.0.27.jar:8.0.27]
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122) ~[mysql-connector-java-8.0.27.jar:8.0.27]
+	at com.mysql.cj.jdbc.StatementImpl.executeInternal(StatementImpl.java:768) ~[mysql-connector-java-8.0.27.jar:8.0.27]
+	at com.mysql.cj.jdbc.StatementImpl.execute(StatementImpl.java:653) ~[mysql-connector-java-8.0.27.jar:8.0.27]
+	at com.zaxxer.hikari.pool.ProxyStatement.execute(ProxyStatement.java:94) ~[HikariCP-4.0.3.jar:?]
+	at com.zaxxer.hikari.pool.HikariProxyStatement.execute(HikariProxyStatement.java) ~[HikariCP-4.0.3.jar:?]
+	at org.hibernate.tool.schema.internal.exec.GenerationTargetToDatabase.accept(GenerationTargetToDatabase.java:54) ~[hibernate-core-5.4.32.Final.jar:5.4.32.Final]
+	... 35 more
+2021-12-02 16:35:30,104 [main] WARN  org.hib.too.sch.int.ExceptionHandlerLoggedImpl     - GenerationTarget encountered exception accepting command : Error executing DDL "
+    alter table author_books 
+       drop 
+       foreign key FKfvabqdr9njwv4khjqkf1pbmma" via JDBC Statement 
+org.hibernate.tool.schema.spi.CommandAcceptanceException: Error executing DDL "
+    alter table author_books 
+       drop 
+       foreign key FKfvabqdr9njwv4khjqkf1pbmma" via JDBC Statement
+	at org.hibernate.tool.schema.internal.exec.GenerationTargetToDatabase.accept(GenerationTargetToDatabase.java:67) ~[hibernate-core-5.4.32.Final.jar:5.4.32.Final]
+	at org.hibernate.tool.schema.internal.SchemaDropperImpl.applySqlString(SchemaDropperImpl.java:375) ~[hibernate-core-5.4.32.Final.jar:5.4.32.Final]
+	at org.hibernate.tool.schema.internal.SchemaDropperImpl.applySqlStrings(SchemaDropperImpl.java:359) ~[hibernate-core-5.4.32.Final.jar:5.4.32.Final]
+	at org.hibernate.tool.schema.internal.SchemaDropperImpl.applyConstraintDropping(SchemaDropperImpl.java:331) ~[hibernate-core-5.4.32.Final.jar:5.4.32.Final]
+	at org.hibernate.tool.schema.internal.SchemaDropperImpl.dropFromMetadata(SchemaDropperImpl.java:230) ~[hibernate-core-5.4.32.Final.jar:5.4.32.Final]
+	at org.hibernate.tool.schema.internal.SchemaDropperImpl.performDrop(SchemaDropperImpl.java:154) ~[hibernate-core-5.4.32.Final.jar:5.4.32.Final]
+	at org.hibernate.tool.schema.internal.SchemaDropperImpl.doDrop(SchemaDropperImpl.java:126) ~[hibernate-core-5.4.32.Final.jar:5.4.32.Final]
+	at org.hibernate.tool.schema.internal.SchemaDropperImpl.doDrop(SchemaDropperImpl.java:112) ~[hibernate-core-5.4.32.Final.jar:5.4.32.Final]
+	at org.hibernate.tool.schema.spi.SchemaManagementToolCoordinator.performDatabaseAction(SchemaManagementToolCoordinator.java:145) ~[hibernate-core-5.4.32.Final.jar:5.4.32.Final]
+	at org.hibernate.tool.schema.spi.SchemaManagementToolCoordinator.process(SchemaManagementToolCoordinator.java:73) ~[hibernate-core-5.4.32.Final.jar:5.4.32.Final]
+	at org.hibernate.internal.SessionFactoryImpl.<init>(SessionFactoryImpl.java:318) ~[hibernate-core-5.4.32.Final.jar:5.4.32.Final]
+	at org.hibernate.boot.internal.SessionFactoryBuilderImpl.build(SessionFactoryBuilderImpl.java:468) ~[hibernate-core-5.4.32.Final.jar:5.4.32.Final]
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.build(EntityManagerFactoryBuilderImpl.java:1259) ~[hibernate-core-5.4.32.Final.jar:5.4.32.Final]
+	at org.springframework.orm.jpa.vendor.SpringHibernateJpaPersistenceProvider.createContainerEntityManagerFactory(SpringHibernateJpaPersistenceProvider.java:58) ~[spring-orm-5.3.12.jar:5.3.12]
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.createNativeEntityManagerFactory(LocalContainerEntityManagerFactoryBean.java:365) ~[spring-orm-5.3.12.jar:5.3.12]
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.buildNativeEntityManagerFactory(AbstractEntityManagerFactoryBean.java:409) ~[spring-orm-5.3.12.jar:5.3.12]
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.afterPropertiesSet(AbstractEntityManagerFactoryBean.java:396) ~[spring-orm-5.3.12.jar:5.3.12]
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.afterPropertiesSet(LocalContainerEntityManagerFactoryBean.java:341) ~[spring-orm-5.3.12.jar:5.3.12]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1863) ~[spring-beans-5.3.12.jar:5.3.12]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1800) ~[spring-beans-5.3.12.jar:5.3.12]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:620) ~[spring-beans-5.3.12.jar:5.3.12]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542) ~[spring-beans-5.3.12.jar:5.3.12]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335) ~[spring-beans-5.3.12.jar:5.3.12]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234) [spring-beans-5.3.12.jar:5.3.12]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333) [spring-beans-5.3.12.jar:5.3.12]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208) [spring-beans-5.3.12.jar:5.3.12]
+	at org.springframework.context.support.AbstractApplicationContext.getBean(AbstractApplicationContext.java:1154) [spring-context-5.3.12.jar:5.3.12]
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:908) [spring-context-5.3.12.jar:5.3.12]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:583) [spring-context-5.3.12.jar:5.3.12]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:145) [spring-boot-2.5.6.jar:2.5.6]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:754) [spring-boot-2.5.6.jar:2.5.6]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:434) [spring-boot-2.5.6.jar:2.5.6]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:338) [spring-boot-2.5.6.jar:2.5.6]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1343) [spring-boot-2.5.6.jar:2.5.6]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1332) [spring-boot-2.5.6.jar:2.5.6]
+	at it.com.demo.DemoQuotesSpringbootApplication.main(DemoQuotesSpringbootApplication.java:19) [classes/:?]
+Caused by: java.sql.SQLSyntaxErrorException: Table 'demoquotes.author_books' doesn't exist
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:120) ~[mysql-connector-java-8.0.27.jar:8.0.27]
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122) ~[mysql-connector-java-8.0.27.jar:8.0.27]
+	at com.mysql.cj.jdbc.StatementImpl.executeInternal(StatementImpl.java:768) ~[mysql-connector-java-8.0.27.jar:8.0.27]
+	at com.mysql.cj.jdbc.StatementImpl.execute(StatementImpl.java:653) ~[mysql-connector-java-8.0.27.jar:8.0.27]
+	at com.zaxxer.hikari.pool.ProxyStatement.execute(ProxyStatement.java:94) ~[HikariCP-4.0.3.jar:?]
+	at com.zaxxer.hikari.pool.HikariProxyStatement.execute(HikariProxyStatement.java) ~[HikariCP-4.0.3.jar:?]
+	at org.hibernate.tool.schema.internal.exec.GenerationTargetToDatabase.accept(GenerationTargetToDatabase.java:54) ~[hibernate-core-5.4.32.Final.jar:5.4.32.Final]
+	... 35 more
+2021-12-02 16:35:30,104 [main] WARN  org.hib.too.sch.int.ExceptionHandlerLoggedImpl     - GenerationTarget encountered exception accepting command : Error executing DDL "
+    alter table book_authors 
+       drop 
+       foreign key FK551i3sllw1wj7ex6nir16blsm" via JDBC Statement 
+org.hibernate.tool.schema.spi.CommandAcceptanceException: Error executing DDL "
+    alter table book_authors 
+       drop 
+       foreign key FK551i3sllw1wj7ex6nir16blsm" via JDBC Statement
+	at org.hibernate.tool.schema.internal.exec.GenerationTargetToDatabase.accept(GenerationTargetToDatabase.java:67) ~[hibernate-core-5.4.32.Final.jar:5.4.32.Final]
+	at org.hibernate.tool.schema.internal.SchemaDropperImpl.applySqlString(SchemaDropperImpl.java:375) ~[hibernate-core-5.4.32.Final.jar:5.4.32.Final]
+	at org.hibernate.tool.schema.internal.SchemaDropperImpl.applySqlStrings(SchemaDropperImpl.java:359) ~[hibernate-core-5.4.32.Final.jar:5.4.32.Final]
+	at org.hibernate.tool.schema.internal.SchemaDropperImpl.applyConstraintDropping(SchemaDropperImpl.java:331) ~[hibernate-core-5.4.32.Final.jar:5.4.32.Final]
+	at org.hibernate.tool.schema.internal.SchemaDropperImpl.dropFromMetadata(SchemaDropperImpl.java:230) ~[hibernate-core-5.4.32.Final.jar:5.4.32.Final]
+	at org.hibernate.tool.schema.internal.SchemaDropperImpl.performDrop(SchemaDropperImpl.java:154) ~[hibernate-core-5.4.32.Final.jar:5.4.32.Final]
+	at org.hibernate.tool.schema.internal.SchemaDropperImpl.doDrop(SchemaDropperImpl.java:126) ~[hibernate-core-5.4.32.Final.jar:5.4.32.Final]
+	at org.hibernate.tool.schema.internal.SchemaDropperImpl.doDrop(SchemaDropperImpl.java:112) ~[hibernate-core-5.4.32.Final.jar:5.4.32.Final]
+	at org.hibernate.tool.schema.spi.SchemaManagementToolCoordinator.performDatabaseAction(SchemaManagementToolCoordinator.java:145) ~[hibernate-core-5.4.32.Final.jar:5.4.32.Final]
+	at org.hibernate.tool.schema.spi.SchemaManagementToolCoordinator.process(SchemaManagementToolCoordinator.java:73) ~[hibernate-core-5.4.32.Final.jar:5.4.32.Final]
+	at org.hibernate.internal.SessionFactoryImpl.<init>(SessionFactoryImpl.java:318) ~[hibernate-core-5.4.32.Final.jar:5.4.32.Final]
+	at org.hibernate.boot.internal.SessionFactoryBuilderImpl.build(SessionFactoryBuilderImpl.java:468) ~[hibernate-core-5.4.32.Final.jar:5.4.32.Final]
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.build(EntityManagerFactoryBuilderImpl.java:1259) ~[hibernate-core-5.4.32.Final.jar:5.4.32.Final]
+	at org.springframework.orm.jpa.vendor.SpringHibernateJpaPersistenceProvider.createContainerEntityManagerFactory(SpringHibernateJpaPersistenceProvider.java:58) ~[spring-orm-5.3.12.jar:5.3.12]
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.createNativeEntityManagerFactory(LocalContainerEntityManagerFactoryBean.java:365) ~[spring-orm-5.3.12.jar:5.3.12]
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.buildNativeEntityManagerFactory(AbstractEntityManagerFactoryBean.java:409) ~[spring-orm-5.3.12.jar:5.3.12]
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.afterPropertiesSet(AbstractEntityManagerFactoryBean.java:396) ~[spring-orm-5.3.12.jar:5.3.12]
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.afterPropertiesSet(LocalContainerEntityManagerFactoryBean.java:341) ~[spring-orm-5.3.12.jar:5.3.12]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1863) ~[spring-beans-5.3.12.jar:5.3.12]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1800) ~[spring-beans-5.3.12.jar:5.3.12]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:620) ~[spring-beans-5.3.12.jar:5.3.12]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542) ~[spring-beans-5.3.12.jar:5.3.12]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335) ~[spring-beans-5.3.12.jar:5.3.12]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234) [spring-beans-5.3.12.jar:5.3.12]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333) [spring-beans-5.3.12.jar:5.3.12]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208) [spring-beans-5.3.12.jar:5.3.12]
+	at org.springframework.context.support.AbstractApplicationContext.getBean(AbstractApplicationContext.java:1154) [spring-context-5.3.12.jar:5.3.12]
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:908) [spring-context-5.3.12.jar:5.3.12]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:583) [spring-context-5.3.12.jar:5.3.12]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:145) [spring-boot-2.5.6.jar:2.5.6]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:754) [spring-boot-2.5.6.jar:2.5.6]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:434) [spring-boot-2.5.6.jar:2.5.6]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:338) [spring-boot-2.5.6.jar:2.5.6]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1343) [spring-boot-2.5.6.jar:2.5.6]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1332) [spring-boot-2.5.6.jar:2.5.6]
+	at it.com.demo.DemoQuotesSpringbootApplication.main(DemoQuotesSpringbootApplication.java:19) [classes/:?]
+Caused by: java.sql.SQLSyntaxErrorException: Table 'demoquotes.book_authors' doesn't exist
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:120) ~[mysql-connector-java-8.0.27.jar:8.0.27]
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122) ~[mysql-connector-java-8.0.27.jar:8.0.27]
+	at com.mysql.cj.jdbc.StatementImpl.executeInternal(StatementImpl.java:768) ~[mysql-connector-java-8.0.27.jar:8.0.27]
+	at com.mysql.cj.jdbc.StatementImpl.execute(StatementImpl.java:653) ~[mysql-connector-java-8.0.27.jar:8.0.27]
+	at com.zaxxer.hikari.pool.ProxyStatement.execute(ProxyStatement.java:94) ~[HikariCP-4.0.3.jar:?]
+	at com.zaxxer.hikari.pool.HikariProxyStatement.execute(HikariProxyStatement.java) ~[HikariCP-4.0.3.jar:?]
+	at org.hibernate.tool.schema.internal.exec.GenerationTargetToDatabase.accept(GenerationTargetToDatabase.java:54) ~[hibernate-core-5.4.32.Final.jar:5.4.32.Final]
+	... 35 more
+2021-12-02 16:35:30,120 [main] WARN  org.hib.too.sch.int.ExceptionHandlerLoggedImpl     - GenerationTarget encountered exception accepting command : Error executing DDL "
+    alter table book_authors 
+       drop 
+       foreign key FKs4xm7q8i3uxvaiswj1c35nnxw" via JDBC Statement 
+org.hibernate.tool.schema.spi.CommandAcceptanceException: Error executing DDL "
+    alter table book_authors 
+       drop 
+       foreign key FKs4xm7q8i3uxvaiswj1c35nnxw" via JDBC Statement
+	at org.hibernate.tool.schema.internal.exec.GenerationTargetToDatabase.accept(GenerationTargetToDatabase.java:67) ~[hibernate-core-5.4.32.Final.jar:5.4.32.Final]
+	at org.hibernate.tool.schema.internal.SchemaDropperImpl.applySqlString(SchemaDropperImpl.java:375) ~[hibernate-core-5.4.32.Final.jar:5.4.32.Final]
+	at org.hibernate.tool.schema.internal.SchemaDropperImpl.applySqlStrings(SchemaDropperImpl.java:359) ~[hibernate-core-5.4.32.Final.jar:5.4.32.Final]
+	at org.hibernate.tool.schema.internal.SchemaDropperImpl.applyConstraintDropping(SchemaDropperImpl.java:331) ~[hibernate-core-5.4.32.Final.jar:5.4.32.Final]
+	at org.hibernate.tool.schema.internal.SchemaDropperImpl.dropFromMetadata(SchemaDropperImpl.java:230) ~[hibernate-core-5.4.32.Final.jar:5.4.32.Final]
+	at org.hibernate.tool.schema.internal.SchemaDropperImpl.performDrop(SchemaDropperImpl.java:154) ~[hibernate-core-5.4.32.Final.jar:5.4.32.Final]
+	at org.hibernate.tool.schema.internal.SchemaDropperImpl.doDrop(SchemaDropperImpl.java:126) ~[hibernate-core-5.4.32.Final.jar:5.4.32.Final]
+	at org.hibernate.tool.schema.internal.SchemaDropperImpl.doDrop(SchemaDropperImpl.java:112) ~[hibernate-core-5.4.32.Final.jar:5.4.32.Final]
+	at org.hibernate.tool.schema.spi.SchemaManagementToolCoordinator.performDatabaseAction(SchemaManagementToolCoordinator.java:145) ~[hibernate-core-5.4.32.Final.jar:5.4.32.Final]
+	at org.hibernate.tool.schema.spi.SchemaManagementToolCoordinator.process(SchemaManagementToolCoordinator.java:73) ~[hibernate-core-5.4.32.Final.jar:5.4.32.Final]
+	at org.hibernate.internal.SessionFactoryImpl.<init>(SessionFactoryImpl.java:318) ~[hibernate-core-5.4.32.Final.jar:5.4.32.Final]
+	at org.hibernate.boot.internal.SessionFactoryBuilderImpl.build(SessionFactoryBuilderImpl.java:468) ~[hibernate-core-5.4.32.Final.jar:5.4.32.Final]
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.build(EntityManagerFactoryBuilderImpl.java:1259) ~[hibernate-core-5.4.32.Final.jar:5.4.32.Final]
+	at org.springframework.orm.jpa.vendor.SpringHibernateJpaPersistenceProvider.createContainerEntityManagerFactory(SpringHibernateJpaPersistenceProvider.java:58) ~[spring-orm-5.3.12.jar:5.3.12]
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.createNativeEntityManagerFactory(LocalContainerEntityManagerFactoryBean.java:365) ~[spring-orm-5.3.12.jar:5.3.12]
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.buildNativeEntityManagerFactory(AbstractEntityManagerFactoryBean.java:409) ~[spring-orm-5.3.12.jar:5.3.12]
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.afterPropertiesSet(AbstractEntityManagerFactoryBean.java:396) ~[spring-orm-5.3.12.jar:5.3.12]
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.afterPropertiesSet(LocalContainerEntityManagerFactoryBean.java:341) ~[spring-orm-5.3.12.jar:5.3.12]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1863) ~[spring-beans-5.3.12.jar:5.3.12]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1800) ~[spring-beans-5.3.12.jar:5.3.12]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:620) ~[spring-beans-5.3.12.jar:5.3.12]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542) ~[spring-beans-5.3.12.jar:5.3.12]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335) ~[spring-beans-5.3.12.jar:5.3.12]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234) [spring-beans-5.3.12.jar:5.3.12]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333) [spring-beans-5.3.12.jar:5.3.12]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208) [spring-beans-5.3.12.jar:5.3.12]
+	at org.springframework.context.support.AbstractApplicationContext.getBean(AbstractApplicationContext.java:1154) [spring-context-5.3.12.jar:5.3.12]
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:908) [spring-context-5.3.12.jar:5.3.12]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:583) [spring-context-5.3.12.jar:5.3.12]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:145) [spring-boot-2.5.6.jar:2.5.6]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:754) [spring-boot-2.5.6.jar:2.5.6]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:434) [spring-boot-2.5.6.jar:2.5.6]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:338) [spring-boot-2.5.6.jar:2.5.6]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1343) [spring-boot-2.5.6.jar:2.5.6]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1332) [spring-boot-2.5.6.jar:2.5.6]
+	at it.com.demo.DemoQuotesSpringbootApplication.main(DemoQuotesSpringbootApplication.java:19) [classes/:?]
+Caused by: java.sql.SQLSyntaxErrorException: Table 'demoquotes.book_authors' doesn't exist
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:120) ~[mysql-connector-java-8.0.27.jar:8.0.27]
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122) ~[mysql-connector-java-8.0.27.jar:8.0.27]
+	at com.mysql.cj.jdbc.StatementImpl.executeInternal(StatementImpl.java:768) ~[mysql-connector-java-8.0.27.jar:8.0.27]
+	at com.mysql.cj.jdbc.StatementImpl.execute(StatementImpl.java:653) ~[mysql-connector-java-8.0.27.jar:8.0.27]
+	at com.zaxxer.hikari.pool.ProxyStatement.execute(ProxyStatement.java:94) ~[HikariCP-4.0.3.jar:?]
+	at com.zaxxer.hikari.pool.HikariProxyStatement.execute(HikariProxyStatement.java) ~[HikariCP-4.0.3.jar:?]
+	at org.hibernate.tool.schema.internal.exec.GenerationTargetToDatabase.accept(GenerationTargetToDatabase.java:54) ~[hibernate-core-5.4.32.Final.jar:5.4.32.Final]
+	... 35 more
+2021-12-02 16:35:30,136 [main] WARN  org.hib.too.sch.int.ExceptionHandlerLoggedImpl     - GenerationTarget encountered exception accepting command : Error executing DDL "
+    alter table quote 
+       drop 
+       foreign key FKjrfddblprj5v70jd01pv85f0c" via JDBC Statement 
+org.hibernate.tool.schema.spi.CommandAcceptanceException: Error executing DDL "
+    alter table quote 
+       drop 
+       foreign key FKjrfddblprj5v70jd01pv85f0c" via JDBC Statement
+	at org.hibernate.tool.schema.internal.exec.GenerationTargetToDatabase.accept(GenerationTargetToDatabase.java:67) ~[hibernate-core-5.4.32.Final.jar:5.4.32.Final]
+	at org.hibernate.tool.schema.internal.SchemaDropperImpl.applySqlString(SchemaDropperImpl.java:375) ~[hibernate-core-5.4.32.Final.jar:5.4.32.Final]
+	at org.hibernate.tool.schema.internal.SchemaDropperImpl.applySqlStrings(SchemaDropperImpl.java:359) ~[hibernate-core-5.4.32.Final.jar:5.4.32.Final]
+	at org.hibernate.tool.schema.internal.SchemaDropperImpl.applyConstraintDropping(SchemaDropperImpl.java:331) ~[hibernate-core-5.4.32.Final.jar:5.4.32.Final]
+	at org.hibernate.tool.schema.internal.SchemaDropperImpl.dropFromMetadata(SchemaDropperImpl.java:230) ~[hibernate-core-5.4.32.Final.jar:5.4.32.Final]
+	at org.hibernate.tool.schema.internal.SchemaDropperImpl.performDrop(SchemaDropperImpl.java:154) ~[hibernate-core-5.4.32.Final.jar:5.4.32.Final]
+	at org.hibernate.tool.schema.internal.SchemaDropperImpl.doDrop(SchemaDropperImpl.java:126) ~[hibernate-core-5.4.32.Final.jar:5.4.32.Final]
+	at org.hibernate.tool.schema.internal.SchemaDropperImpl.doDrop(SchemaDropperImpl.java:112) ~[hibernate-core-5.4.32.Final.jar:5.4.32.Final]
+	at org.hibernate.tool.schema.spi.SchemaManagementToolCoordinator.performDatabaseAction(SchemaManagementToolCoordinator.java:145) ~[hibernate-core-5.4.32.Final.jar:5.4.32.Final]
+	at org.hibernate.tool.schema.spi.SchemaManagementToolCoordinator.process(SchemaManagementToolCoordinator.java:73) ~[hibernate-core-5.4.32.Final.jar:5.4.32.Final]
+	at org.hibernate.internal.SessionFactoryImpl.<init>(SessionFactoryImpl.java:318) ~[hibernate-core-5.4.32.Final.jar:5.4.32.Final]
+	at org.hibernate.boot.internal.SessionFactoryBuilderImpl.build(SessionFactoryBuilderImpl.java:468) ~[hibernate-core-5.4.32.Final.jar:5.4.32.Final]
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.build(EntityManagerFactoryBuilderImpl.java:1259) ~[hibernate-core-5.4.32.Final.jar:5.4.32.Final]
+	at org.springframework.orm.jpa.vendor.SpringHibernateJpaPersistenceProvider.createContainerEntityManagerFactory(SpringHibernateJpaPersistenceProvider.java:58) ~[spring-orm-5.3.12.jar:5.3.12]
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.createNativeEntityManagerFactory(LocalContainerEntityManagerFactoryBean.java:365) ~[spring-orm-5.3.12.jar:5.3.12]
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.buildNativeEntityManagerFactory(AbstractEntityManagerFactoryBean.java:409) ~[spring-orm-5.3.12.jar:5.3.12]
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.afterPropertiesSet(AbstractEntityManagerFactoryBean.java:396) ~[spring-orm-5.3.12.jar:5.3.12]
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.afterPropertiesSet(LocalContainerEntityManagerFactoryBean.java:341) ~[spring-orm-5.3.12.jar:5.3.12]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1863) ~[spring-beans-5.3.12.jar:5.3.12]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1800) ~[spring-beans-5.3.12.jar:5.3.12]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:620) ~[spring-beans-5.3.12.jar:5.3.12]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542) ~[spring-beans-5.3.12.jar:5.3.12]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335) ~[spring-beans-5.3.12.jar:5.3.12]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234) [spring-beans-5.3.12.jar:5.3.12]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333) [spring-beans-5.3.12.jar:5.3.12]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208) [spring-beans-5.3.12.jar:5.3.12]
+	at org.springframework.context.support.AbstractApplicationContext.getBean(AbstractApplicationContext.java:1154) [spring-context-5.3.12.jar:5.3.12]
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:908) [spring-context-5.3.12.jar:5.3.12]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:583) [spring-context-5.3.12.jar:5.3.12]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:145) [spring-boot-2.5.6.jar:2.5.6]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:754) [spring-boot-2.5.6.jar:2.5.6]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:434) [spring-boot-2.5.6.jar:2.5.6]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:338) [spring-boot-2.5.6.jar:2.5.6]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1343) [spring-boot-2.5.6.jar:2.5.6]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1332) [spring-boot-2.5.6.jar:2.5.6]
+	at it.com.demo.DemoQuotesSpringbootApplication.main(DemoQuotesSpringbootApplication.java:19) [classes/:?]
+Caused by: java.sql.SQLSyntaxErrorException: Can't DROP 'FKjrfddblprj5v70jd01pv85f0c'; check that column/key exists
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:120) ~[mysql-connector-java-8.0.27.jar:8.0.27]
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122) ~[mysql-connector-java-8.0.27.jar:8.0.27]
+	at com.mysql.cj.jdbc.StatementImpl.executeInternal(StatementImpl.java:768) ~[mysql-connector-java-8.0.27.jar:8.0.27]
+	at com.mysql.cj.jdbc.StatementImpl.execute(StatementImpl.java:653) ~[mysql-connector-java-8.0.27.jar:8.0.27]
+	at com.zaxxer.hikari.pool.ProxyStatement.execute(ProxyStatement.java:94) ~[HikariCP-4.0.3.jar:?]
+	at com.zaxxer.hikari.pool.HikariProxyStatement.execute(HikariProxyStatement.java) ~[HikariCP-4.0.3.jar:?]
+	at org.hibernate.tool.schema.internal.exec.GenerationTargetToDatabase.accept(GenerationTargetToDatabase.java:54) ~[hibernate-core-5.4.32.Final.jar:5.4.32.Final]
+	... 35 more
+2021-12-02 16:35:30,537 [main] INFO  org.hib.eng.tra.jta.pla.int.JtaPlatformInitiator   - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform] 
+2021-12-02 16:35:30,552 [main] INFO  org.spr.orm.jpa.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default' 
+2021-12-02 16:35:30,906 [main] WARN  org.spr.boo.aut.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning 
+2021-12-02 16:35:31,123 [main] INFO  org.apa.coy.htt.Http11NioProtocol                  - Starting ProtocolHandler ["http-nio-8080"] 
+2021-12-02 16:35:31,138 [main] INFO  org.spr.boo.web.emb.tom.TomcatWebServer            - Tomcat started on port(s): 8080 (http) with context path '' 
+2021-12-02 16:35:31,294 [main] INFO  it.com.dem.DemoQuotesSpringbootApplication         - Started DemoQuotesSpringbootApplication in 3.322 seconds (JVM running for 4.377) 
