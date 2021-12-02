@@ -80,6 +80,8 @@ public class QuoteService {
         checkIfQuoteExists(id);
         quoteRepository.findById(id).get().setQuote(quote.getQuote());
         quoteRepository.findById(id).get().setAuthor(quote.getAuthor());
+        quoteRepository.findById(id).get().setDateOfQuote(quote.getDateOfQuote());
+        quoteRepository.findById(id).get().setOrigin(quote.getOrigin());
         logger.info("PUT method returned");
         return ResponseModel.generateResponse("PutSuccess", HttpStatus.ACCEPTED, quote);
     }

@@ -1,4 +1,4 @@
-<Configuration>
+<Configuration status="WARN" strict="true">
 
     <Appenders>
 
@@ -15,6 +15,7 @@
             {3.} used to shorten the logo name -->
 
         </Console>
+
         <File name="File" fileName="logfile.log">
 
             <PatternLayout
@@ -22,6 +23,20 @@
                     pattern="%d [%t] %-5level %-50c{3.} - %msg %n"/>
 
         </File>
+        <appender name="rollingFile" class="org.apache.log4j.rolling.RollingFileAppender">
+            <rollingPolicy
+                    class="org.apache.log4j.rolling.TimeBasedRollingPolicy">
+                <param name="ActiveFileName" value="${LOG_DIR}/application.log" />
+                <param name="FileNamePattern" value="${LOG_DIR}/application.%d{dd-MMM}.log.gz" />
+            </rollingPolicy>
+            <triggeringPolicy
+                    class="org.apache.log4j.rolling.SizeBasedTriggeringPolicy">
+                <param name="MaxFileSize" value="10MB" />
+            </triggeringPolicy>
+            <layout class="org.apache.log4j.PatternLayout">
+                <param name="ConversionPattern" value="%d{yyyy-MM-dd HH:mm:ss} %-5p - %m%n" />
+            </layout>
+        </appender>
 
     </Appenders>
     <Loggers>

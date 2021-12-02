@@ -6,9 +6,7 @@ import it.com.demo.model.Quote;
 import it.com.demo.model.ResponseModel;
 import it.com.demo.repository.AuthorRepository;
 import it.com.demo.repository.QuoteRepository;
-import org.assertj.core.internal.bytebuddy.dynamic.DynamicType;
-import org.checkerframework.checker.units.qual.A;
-import org.junit.jupiter.api.BeforeAll;
+import org.junit.BeforeClass;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
@@ -17,37 +15,39 @@ import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.Mockito;
 import org.mockito.junit.MockitoJUnitRunner;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.http.HttpStatus;
+import org.springframework.test.context.junit4.SpringRunner;
 
 import java.time.LocalDate;
 import java.util.*;
 
-import static java.util.Optional.of;
 import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.ArgumentMatchers.anyLong;
 import static org.mockito.Mockito.when;
 
-@RunWith(MockitoJUnitRunner.class)
+@RunWith(SpringRunner.class)
 @SpringBootTest
 class QuoteServiceTest {
 
-    @Mock
+    @MockBean
     QuoteRepository quoteRepository;
-    @Mock
+    @MockBean
     AuthorRepository authorRepository;
 
-    @InjectMocks
+    @Autowired
     QuoteService service;
 
-    private Author author;
-    private Quote quote;
+    private  Author author;
+    private  Quote quote;
+
     @BeforeEach
-    void setUp() {
+    public void setUp() {
         this.author = new Author(1L,"name", "surname", LocalDate.now(), LocalDate.now(),"Mr.","Worker", "www.site.com");
         this.quote = new Quote(1L, "text","Origin", LocalDate.now(), author);
-        Mockito.reset();
     }
 
     @Test
@@ -99,19 +99,19 @@ class QuoteServiceTest {
 
     @Test
     void delQuote() throws QuoteException {
-        when(quoteRepository.existsById(any())).thenReturn(true);
-        assertEquals(service.delQuote(any()), ResponseModel.generateResponse("DeleteSuccess", HttpStatus.ACCEPTED, any()));
+        when(quoteRepository.existsById(1L)).thenReturn(true);
+        assertEquals(service.delQuote(1L), ResponseModel.generateResponse("DeleteSuccess", HttpStatus.ACCEPTED, 1L));
     }
 
     @Test
     void getAllQuotesFromAuthor() throws QuoteException {
         Set<Quote> quoteSet = new HashSet<>();
         quoteSet.add(quote);
-        when(quoteRepository.findAllByAuthorId(any())).thenReturn(quoteSet);
-        assertEquals(service.getAllQuotesFromAuthor(any()), ResponseModel.generateResponse("GetSuccess", HttpStatus.FOUND, quoteSet));
+        when(quoteRepository.findAllByAuthorId(1L)).thenReturn(quoteSet);
+        assertEquals(service.getAllQuotesFromAuthor(1L), ResponseModel.generateResponse("GetSuccess", HttpStatus.FOUND, quoteSet));
     }
+
     @Test
-    @Disabled
     void getAllQuotesFromAuthorWhenEmpty(){
         Set<Quote> quoteSet = new HashSet<>();
         when(quoteRepository.findAllByAuthorId(1L)).thenReturn(quoteSet);
@@ -122,8 +122,8 @@ class QuoteServiceTest {
 
     @Test
     void getRankingsWhenSize() throws QuoteException {
-/*        Author author = new Author(1L,"name", "surname", LocalDate.now(), LocalDate.now(),"Mr.","Worker", "www.site.com");
-        Quote quote = new Quote(1L, "text","Origin", LocalDate.now(), author);*/
+        Author author = new Author(1L,"name", "surname", LocalDate.now(), LocalDate.now(),"Mr.","Worker", "www.site.com");
+        Quote quote = new Quote(1L, "text","Origin", LocalDate.now(), author);
         List<Quote> quotes = new ArrayList<>();
         quotes.add(quote);
         List<String> rquotes = new ArrayList<>();

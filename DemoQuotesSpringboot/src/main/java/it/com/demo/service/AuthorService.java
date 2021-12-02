@@ -37,10 +37,14 @@ public class AuthorService {
      * @throws QuoteException
      */
     public ResponseEntity<Object> patchAuthor(Long authorId, Author author) throws QuoteException {
-        //validateAuthor(author);
         checkIfAuthorPresent(authorId);
         Author newAuthor = repository.findById(authorId).get();
-        newAuthor.setName(author.getName());
+        if(!author.getName().isEmpty()) newAuthor.setName(author.getName());
+        if(!author.getSurname().isEmpty()) newAuthor.setSurname(author.getSurname());
+        if(!author.getProfession().isEmpty()) newAuthor.setProfession(author.getProfession());
+        if(!author.getTitle().isEmpty()) newAuthor.setTitle(author.getTitle());
+        if(!(author.getDateOfBirth()==null)) newAuthor.setDateOfBirth(author.getDateOfBirth());
+        if(!(author.getDateOfDeath()==null)) newAuthor.setDateOfDeath(author.getDateOfDeath());
         repository.save(newAuthor);
         logger.info("PATCH method retured");
         return ResponseModel.generateResponse("PatchSuccess", HttpStatus.ACCEPTED, newAuthor);

@@ -12,14 +12,14 @@ import springfox.documentation.spring.web.plugins.Docket;
 import springfox.documentation.swagger2.annotations.EnableSwagger2;
 
 @SpringBootApplication
-@EnableSwagger2
+//@EnableSwagger2
 public class DemoQuotesSpringbootApplication {
 
     public static void main(String[] args) {
         SpringApplication.run(DemoQuotesSpringbootApplication.class, args);
     }
 
-    @Bean
+/*    @Bean
     public Docket swaggerconfiguration() {
         return new Docket(DocumentationType.SWAGGER_2).select()
                 .apis(RequestHandlerSelectors.basePackage("com.quotes"))
@@ -36,5 +36,5 @@ public class DemoQuotesSpringbootApplication {
                 "V1",
                 "NA terms of service url",
                 "Alessio Ottaviani", "info.licence.url", "http://www.apache.org/licenses/LICENSE-2.0.html");
-    }
+    }*/
 }
