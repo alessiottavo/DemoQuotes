@@ -60,15 +60,6 @@ public class Author {
     @ToString.Exclude
     private Set<Quote> quotes = new HashSet<>();
 
-    @JsonBackReference
-    @ManyToMany(
-            //mappedBy = "author",
-            cascade = CascadeType.ALL,
-            fetch = FetchType.LAZY
-    )
-    @ToString.Exclude
-    private Set<Book> books = new HashSet<>();
-
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;

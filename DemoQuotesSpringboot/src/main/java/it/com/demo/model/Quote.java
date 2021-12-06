@@ -36,8 +36,6 @@ public class Quote {
     )
     @ManyToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
     private Author author;
-    @ManyToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
-    private Book book;
 
     public Quote(Long id, String quote_body, Author author) {
         this.quote = quote_body;

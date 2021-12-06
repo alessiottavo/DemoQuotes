@@ -2,11 +2,9 @@ package it.com.demo.service;
 
 import it.com.demo.exception.QuoteException;
 import it.com.demo.model.Author;
-import it.com.demo.model.Quote;
 import it.com.demo.model.ResponseModel;
 import it.com.demo.repository.AuthorRepository;
 import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -42,9 +40,11 @@ class AuthorServiceTest {
 
     @Test
     void getAllAuthorsWhenFull() throws QuoteException {
+        //when
         List<Author> authorList = new ArrayList<>();
         authorList.add(author);
         when(authorRepository.findAll()).thenReturn(authorList);
+        //then
         assertEquals(service.getAllAuthors("", ""), ResponseModel.generateResponse("GetSuccess", HttpStatus.FOUND, authorList));
     }
 
